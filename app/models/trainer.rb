@@ -4,6 +4,7 @@ class Trainer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   geocoded_by :address
+  has_and_belongs_to_many :exercises, -> { uniq }
   after_validation :geocode
   validates :email, uniqueness: true, presence: true  
   validates :first_name, presence: true
