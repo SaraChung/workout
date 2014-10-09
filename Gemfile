@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-gem 'rails-api'
+# gem 'rails-api'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'devise'
