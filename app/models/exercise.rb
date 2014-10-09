@@ -1,3 +1,4 @@
 class Exercise < ActiveRecord::Base
-	has_and_belongs_to_many :trainers, -> { uniq }
+	has_many :exercises_trainers
+  has_many :trainers, through: :exercises_trainers
 end
