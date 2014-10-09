@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :trainers
+  devise_for :trainers, controllers: { sessions: 'trainers/sessions', registrations: 'trainers/registrations' }
   devise_for :admins
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-
+  
+  namespace :trainers do
+    resources :skills, only: [:new, :create]
+    resources :dashboard, only: [:index]
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
