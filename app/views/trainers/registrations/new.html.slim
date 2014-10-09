@@ -1,0 +1,45 @@
+h2
+  | Sign up
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  div
+    = f.label :first_name
+    = f.text_field :first_name
+    = f.label :last_name
+    = f.text_field :last_name
+    = f.label :phone_number
+    = f.text_field :phone_number, placeholder: "+110092329"
+    = f.label :gender
+    = radio_button("trainer", "gender", "0", id: "trainer_gender")
+    = label :gender, "Female"
+    = radio_button("trainer", "gender", "1", id: "trainer_gender")
+    = label :gender, "Male"
+  br
+    = label :address, "Address"
+    = f.text_field :address, placeholder: "your full address here"
+  br
+    = f.label :trainer, "Trainer/Assistant"
+    = radio_button("trainer", "is_trainer", true, id: "trainer_is_trainer")
+    = label :gender, "Trainer"
+    = radio_button("trainer", "is_trainer", false, id: "trainer_is_trainer")
+    = label :gender, "Assistant"
+  br
+    = f.label :email
+    br
+    = f.email_field :email, autofocus: true
+  div
+    = f.label :password
+    - if @validatable
+      i
+        | (
+        = @minimum_password_length
+        |  characters minimum)
+    br
+    = f.password_field :password, autocomplete: "off"
+  div
+    = f.label :password_confirmation
+    br
+    = f.password_field :password_confirmation, autocomplete: "off"
+  div
+    = f.submit "Sign up"
+= render "devise/shared/links"
