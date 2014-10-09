@@ -41,12 +41,11 @@ ActiveRecord::Schema.define(version: 20141009151100) do
   end
 
   create_table "exercises_trainers", id: false, force: true do |t|
-    t.integer "exercise_id"
-    t.integer "trainer_id"
+    t.integer  "trainer_id"
+    t.integer  "exercise_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
-
-  add_index "exercises_trainers", ["exercise_id", "trainer_id"], name: "index_exercises_trainers_on_exercise_id_and_trainer_id", unique: true, using: :btree
-  add_index "exercises_trainers", ["trainer_id", "exercise_id"], name: "index_exercises_trainers_on_trainer_id_and_exercise_id", unique: true, using: :btree
 
   create_table "profiles_trainers", force: true do |t|
     t.integer  "trainer_id",     null: false
