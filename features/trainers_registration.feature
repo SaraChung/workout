@@ -18,6 +18,7 @@ Feature: Register for Trainer or Assistant
     And I choose "true" from "trainer_trainer"
     Then I click "Sign up" button
     And I should see "One more step"
+    
 
   Scenario: Register as An Assistant
     When I visit let's workout web application
