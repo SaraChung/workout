@@ -22,8 +22,6 @@ class Trainers::SkillsController < TrainersController
 
   def build_skills
   	current_trainer.exercises.destroy_all
-  	skills_params[:skill_ids].each do |x|
-  	  @skill = current_trainer.exercises << Exercise.find(x)
-  	end
+  	skills_params[:skill_ids].each { |x| @skill = current_trainer.exercises << Exercise.find(x) } if skills_params[:skill_ids]
   end
 end
