@@ -6,7 +6,6 @@ html
     = javascript_include_tag 'dashboard'
 
   body
-    h1 Dashboard
 
     #content
       = link_to "Logout", destroy_trainer_session_path, :method=>'delete' if trainer_signed_in?
