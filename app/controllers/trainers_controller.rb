@@ -1,3 +1,3 @@
-class TrainersController < ApplicationController
-	layout 'dashboard'
+class TrainersController < ApplicationController 
+  layout 'dashboard'
 end
