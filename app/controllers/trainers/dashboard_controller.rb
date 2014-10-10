@@ -1,4 +1,4 @@
-class Trainers::DashboardController < ApplicationController
+class Trainers::DashboardController < TrainersController
 	before_filter :authenticate_trainer!
 	def index
 		
