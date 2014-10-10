@@ -7,10 +7,15 @@ gem 'pg'
 gem 'devise'
 gem 'geocoder'
 gem 'gon'
+
+#HTML/CSS
 gem 'slim'
+gem 'bourbon', '3.2'
+gem 'neat','1.5.1'
+gem 'bitters', '0.10.0'
 gem 'refills'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
