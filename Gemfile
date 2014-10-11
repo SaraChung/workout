@@ -14,6 +14,10 @@ gem 'bourbon', '3.2'
 gem 'neat','1.5.1'
 gem 'bitters', '0.10.0'
 gem 'refills'
+
+#Presentation support
+gem 'draper', '~> 1.3'
+
 # Use SCSS for stylesheets
 gem 'sass'
 # Use Uglifier as compressor for JavaScript assets
