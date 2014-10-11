@@ -1,0 +1,10 @@
+@include font-face(bebas_neueregular, 'bebas_neue/BebasNeue-webfont', normal, $asset-pipeline: true);
+
+body{
+	margin: 0;
+}
+
+.menu-title, a.menu-title{
+  font-family: bebas_neueregular;
+  font-size: em(26);
+}
