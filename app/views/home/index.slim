@@ -1,2 +1,17 @@
-| Sukses
-= trainer_signed_in?
+.vertical-tabs-container
+  .vertical-tabs
+    a.js-vertical-tab.vertical-tab.is-active[href="#" rel="tab1"]
+      | First Time Use
+    a.js-vertical-tab.vertical-tab[href="#" rel="tab2"]
+      | Already Registered?
+
+  .vertical-tab-content-container
+    a.js-vertical-tab-accordion-heading.vertical-tab-accordion-heading.is-active[href="" rel="tab1"]
+      | First Time Use
+    #tab1.js-vertical-tab-content.vertical-tab-content
+      = render "first_time_use"
+          
+    a.js-vertical-tab-accordion-heading.vertical-tab-accordion-heading[href="" rel="tab2"]
+      | Already Registered?
+    #tab2.js-vertical-tab-content.vertical-tab-content
+      = render "already_registered"

@@ -1,0 +1,34 @@
+header.navigation
+  .menu-wrapper
+    p#js-mobile-menu.navigation-menu-button
+      | MENU
+    .nav
+      ul#navigation-menu
+        li.nav-link.menu-title
+          = link_to "#{@trainer.is_trainer} Dashboard", "#"
+        li.nav-link
+          a[href="javascript:void(0)"]
+            | Products
+        li.nav-link
+          a[href="javascript:void(0)"]
+            | About Us
+        li.nav-link
+          a[href="javascript:void(0)"]
+            | Contact
+        li.nav-link.more
+          a[href="javascript:void(0)"]
+            | More
+          ul.submenu
+            li
+              a[href="javascript:void(0)"]
+                | Submenu Item
+            li
+              a[href="javascript:void(0)"]
+                | Another Item
+    .navigation-tools
+      .search-bar
+        .search-and-submit
+          input[type="search" placeholder="Search for Trainer"]
+          button[type="submit"]
+            img[src="https://raw.githubusercontent.com/Magnus-G/Random/master/search-icon.png" alt=""]
+      = link_to "Trainer/Assistant?", new_trainer_registration_path, class: "sign-up"

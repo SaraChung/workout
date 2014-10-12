@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Dashboard
+    = stylesheet_link_tag    'dashboard', media: 'all'
+    = javascript_include_tag 'dashboard'
+
+  body
+    #content
+      = render 'layouts/trainer/navigation'
+      .wrapper-for-content-outside-of-footer
+        = render 'layouts/trainer/content'
+        .push
+
+    = render 'refills/footer'
+
+      = link_to "Logout", destroy_trainer_session_path, :method=>'delete' if trainer_signed_in?
+      
+      == yield

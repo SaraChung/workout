@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+puts "Seeding data"
+
+if Rails.env.production?
+  Dir["#{Rails.root}/db/seeds/production/*.rb"].each do |file| 
+    puts "Seeding #{file.split('/')[-1]}"
+    require file
+  end
+else
+  Dir["#{Rails.root}/db/seeds/development/*.rb"].each do |file| 
+    puts "Seeding #{file.split('/')[-1]}"
+    require file
+  end
+end
+
+puts "Done!"

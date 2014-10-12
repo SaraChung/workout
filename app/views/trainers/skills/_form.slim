@@ -1,0 +1,11 @@
+= form_for @skill, url: trainers_skills_path do |f|
+  | Choose your skills:
+
+  - @skills.each_with_index do |skill, index|
+    br
+    = check_box_tag "skill_ids[]", skill.id
+    = skill.name
+
+  br
+  = f.submit "Save"
+
