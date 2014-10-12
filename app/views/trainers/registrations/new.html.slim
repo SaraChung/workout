@@ -53,5 +53,16 @@ fieldset.right-content
       a.tab-link[href="#"]
         | Sign in
       section
-        p
-          | Ut laoreet augue et neque pretium non sagittis nibh pulvinar. Etiam ornare tincidunt orci quis ultrices. Pellentesque ac sapien ac purus gravida ullamcorper. Duis rhoncus sodales lacus, vitae adipiscing tellus pharetra sed. Praesent bibendum lacus quis metus condimentum ac accumsan orci vulputate. Aenean fringilla massa vitae metus facilisis congue. Morbi placerat eros ac sapien semper pulvinar. Vestibulum facilisis, ligula a molestie venenatis, metus justo ullamcorper ipsum, congue aliquet dolor tortor eu neque. Sed imperdiet, nibh ut vestibulum tempor, nibh dui volutpat lacus, vel gravida magna justo sit amet quam. Quisque tincidunt ligula at nisl imperdiet sagittis. Morbi rutrum tempor arcu, non ultrices sem semper a. Aliquam quis sem mi.
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .input-control
+            = f.label :email, class: "form-label"
+            = f.email_field :email, autofocus: true
+          .input-control
+            = f.label :password, class: "form-label"
+            = f.password_field :password, autocomplete: "off"
+          - if devise_mapping.rememberable?
+            .input-control.label-checkbox
+                = f.check_box :remember_me
+                = f.label :remember_me
+          div
+            = f.submit "Log in"
