@@ -24,6 +24,6 @@ class Trainers::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-    # new_trainers_skill_path
+    trainers_dashboard_index_path
   end
 end
