@@ -12,7 +12,6 @@ html
         = render 'layouts/trainer/content'
         .push
 
-    = render 'refills/footer'
 
       = link_to "Logout", destroy_trainer_session_path, :method=>'delete' if trainer_signed_in?
       

@@ -31,4 +31,4 @@ header.navigation
           input[type="search" placeholder="Search for Trainer"]
           button[type="submit"]
             img[src="https://raw.githubusercontent.com/Magnus-G/Random/master/search-icon.png" alt=""]
-      = link_to "Trainer/Assistant?", new_trainer_registration_path, class: "sign-up"
+      = link_to "Logout", destroy_trainer_session_path, :method => 'delete' if trainer_signed_in?
