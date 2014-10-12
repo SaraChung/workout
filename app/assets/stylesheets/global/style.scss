@@ -8,3 +8,30 @@ body{
   font-family: bebas_neueregular;
   font-size: em(26);
 }
+
+.right-content{
+	float: right !important;
+	color: black;
+	display: inline-block;
+	background: rgb(243, 249, 250);
+  opacity: 0.95;
+	@include span-columns(6);
+}
+
+.form-label{ 
+	@include span-columns(4);
+	text-align: right;
+}
+
+.label-checkbox{
+	@include span-columns(3);
+	text-align: left;
+}
+
+.form-input{
+	@include omega();
+}
+
+.input-control{
+	@include outer-container;
+}
