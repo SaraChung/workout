@@ -1,9 +1,9 @@
 = form_for @skill, url: trainers_skills_path do |f|
-  | Choose your skills:
+  | These are skills that will be shown to your client.
 
   - @skills.each_with_index do |skill, index|
     br
-    = check_box_tag "skill_ids[]", skill.id
+    = check_box_tag "skill_ids[]", skill.id, @trainer_skills.include?(skill.id) ? true : false
     = skill.name
 
   br
