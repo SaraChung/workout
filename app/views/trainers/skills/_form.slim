@@ -3,7 +3,7 @@
 
   - @skills.each_with_index do |skill, index|
     br
-    = check_box_tag "skill_ids[]", skill.id, @trainer_skills.include?(skill.id) ? true : false
+    = check_box_tag "skill_ids[]", skill.id, @trainer_skills.include?(skill.id)
     = skill.name
 
   br
