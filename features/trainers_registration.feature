@@ -7,7 +7,7 @@ Feature: Register for Trainer or Assistant
     When I visit let's workout web application
     Then I should see "Are you trainer/assistant?"
     And I click "Are you trainer/assistant?" link
-    Then I should see "Trainer/Assistant Registration Form"
+    Then I should see "Trainer/Assistant Sign Up Form"
     And I fill "trainer_first_name" with "Anna"
     And I fill "trainer_last_name" with "Baudelaire"
     And I fill "trainer_email" with "anna.baudelaire@trainer.com"
@@ -24,7 +24,7 @@ Feature: Register for Trainer or Assistant
     When I visit let's workout web application
     Then I should see "Are you trainer/assistant?"
     And I click "Are you trainer/assistant?" link
-    Then I should see "Trainer/Assistant Registration Form"
+    Then I should see "Trainer/Assistant Sign Up Form"
     And I fill "trainer_first_name" with "Anna"
     And I fill "trainer_last_name" with "Baudelaire"
     And I fill "trainer_email" with "anna.baudelaire@trainer.com"
