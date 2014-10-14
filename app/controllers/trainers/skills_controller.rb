@@ -9,7 +9,7 @@ class Trainers::SkillsController < TrainersController
 	end
 
 	def create
-		redirect_to trainers_dashboard_index_path	
+		redirect_to trainers_dashboard_index_path, notice: "Your skill was successfully updated."
 	end
 
   private
