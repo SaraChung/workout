@@ -1,5 +1,4 @@
 class Trainers::SkillsController < TrainersController
-	before_filter :authenticate_trainer!
 	before_action :load_skills, only: [:create, :new]
 	before_action :build_skills, only: [:create]
   before_action :trainer_skills, only: [:new]
