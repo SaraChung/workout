@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :trainers, controllers: { sessions: 'trainers/sessions', registrations: 'trainers/registrations' }
   devise_for :admins
-  devise_for :users, :skip => [:sessions, :registrations]
+  devise_for :users, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
