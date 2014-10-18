@@ -20,7 +20,7 @@ class Trainer < ActiveRecord::Base
   scope :skill, -> (id) { relations.where("exercises.id = ?", id).pluck(:id).uniq }
   scope :has_session, -> (start_date, end_date) { relations.where("sessions.from_when >= ? AND sessions.to_when <= ?",start_date, end_date).pluck(:id).uniq }
   scope :closest_trainer, -> (user_address) { near(user_address, 10, units: :km) }
-  scope :available, -> (id, start_date, end_date) { where("id IN (#{(self.skill(id) - self.has_session(start_date, end_date)).join(',')})") }
+  scope :available, -> (id, start_date, end_date) { where("id IN (#{(skill(id) - has_session(start_date, end_date)).join(',')})") }
 
   def load_trainer_skills
     self.exercises.pluck(:id)
