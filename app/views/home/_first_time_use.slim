@@ -1,4 +1,28 @@
-h5 Book Trainer/Assistant
+h5 Find Trainer/Assistant
 
-= form_tag('/', remote: true)
-= render "users/shared/links"
+= form_tag(find_trainer_books_path, remote: true)
+  .input-control
+    = label_tag "book_date", "Date", class: "form-label"
+    = select_date(Time.now, discard_year: true, prefix: "book_date")
+  .input-control
+    = label_tag "book_time", "Time", class: "form-label"
+    = select_time(Time.now, start_hour: 6, end_hour: 22, ampm: true, prefix: "book_time", minute_step: 15)
+  .input-control
+    = label_tag "book_range", "How many minutes", class: "form-label"
+    = select_tag "book_range", options_for_select([ 30, 45, 60, 90 ], 45)
+  .input-control
+    = label_tag "book_location", "Your Address", class: "form-label"
+    = text_field_tag "book_location"
+  .input-control
+    = label_tag "book_exercise", "Exercise Type", class: "form-label"
+    = select_tag "book_exercise", options_from_collection_for_select(Exercise.all, "id", "name")
+  .input-control
+    = label_tag "book_is_trainer", "Trainer/Assistant", class: "form-label"
+    .label-checkbox
+      = radio_button("book", "is_trainer", true, id: "trainer_is_trainer")
+      | Trainer
+    .label-checkbox
+      = radio_button("book", "is_trainer", false, id: "trainer_is_trainer")
+      | Assistant
+  div
+    = submit_tag "Find", class: "blue-button"
