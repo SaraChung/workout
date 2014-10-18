@@ -16,10 +16,11 @@ class Trainer < ActiveRecord::Base
   validates :last_name, presence: true
   validates :phone_number, presence: true
   
-  scope :relations, eager_load(:exercises, :sessions)
-  scope :skill, -> (id) { relations.where("exercise_id = ?", id) }
-  scope :has_session, -> (start_date, end_date) { relations.where("sessions.from_when >= ? AND sessions.to_when <= ?",start_date, end_date) }
+  scope :relations, -> { eager_load(:exercises, :sessions) }
+  scope :skill, -> (id) { relations.where("exercises.id = ?", id).pluck(:id).uniq }
+  scope :has_session, -> (start_date, end_date) { relations.where("sessions.from_when >= ? AND sessions.to_when <= ?",start_date, end_date).pluck(:id).uniq }
   scope :closest_trainer, -> (user_address) { near(user_address, 10, units: :km) }
+  scope :available, -> (id, start_date, end_date) { where("id IN (#{(self.skill(id) - self.has_session(start_date, end_date)).join(',')})") }
 
   def load_trainer_skills
     self.exercises.pluck(:id)
