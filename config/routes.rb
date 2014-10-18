@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
   end
 
-  resources :books
+  resources :books do
+    collection do
+      get "find_trainer"
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
