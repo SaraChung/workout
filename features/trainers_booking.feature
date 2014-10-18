@@ -8,10 +8,11 @@ Feature: Book Trainer/Assistant
     Then I should see "First Time Use"
     And I should see "Already Registered?"
     And I click "First Time Use" link
-    And I should see "Book Trainer/Assistant"
-    Then I fill "user_book_date" with "10/10/2019"
-    And I fill "user_book_start" with "10.00 AM"
-    And I fill "user_book_end" with "11.30 AM"
+    And I should see "Find Trainer/Assistant"
+    Then I choose "book_date" from "10/10/2019"
+    And I choose "book_time" from "10.00 AM"
+    And I choose "book_range" from "90"
+    And I fill "book_location" with "Toronto"
     And I choose "Yoga" from "user_workout_list"
     And I choose "Trainer" from "user_trainer"
     Then I click "Find" button
