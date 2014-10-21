@@ -1,0 +1,5 @@
+<% if @trainers.count(:all).zero? %>
+  $(".trainer-list").html("Hello");
+<% else %>
+  $(".trainer-list").html("<%=j render partial: 'list' %>");
+<% end %>

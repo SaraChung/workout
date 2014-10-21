@@ -13,9 +13,11 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
   end
 
-  resources :books do
-    collection do
-      get "find_trainer"
+  namespace :users do
+    resources :books do
+      collection do
+        get "find_trainer"
+      end
     end
   end
   # Example of regular route:
