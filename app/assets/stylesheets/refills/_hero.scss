@@ -1,13 +1,13 @@
 .hero {
 	$hero-background: desaturate(darken($base-accent-color, 20), 30);	
-	$hero-color: white;
+	$hero-color: #3879D9;
 
 	background: url('/assets/hero-background.jpg');
 	background-color: $hero-background;
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: cover;
-  height: 100%;
+  min-height: 84%;
 
 	.hero-logo img {
 		height: 3em;
