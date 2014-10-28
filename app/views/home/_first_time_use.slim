@@ -1,6 +1,6 @@
 h5 Find Trainer/Assistant
 
-= form_tag(find_trainer_users_books_path, remote: true, method: :get)
+= form_tag(find_trainer_users_books_path, remote: true, method: :get, id: "first_time_use_form")
   .input-control
     = label_tag "book_time", "Date and Time", class: "form-label"
     = select_datetime(Time.now, discard_year: true, start_hour: 6, end_hour: 22, ampm: true, prefix: "book_time", minute_step: 15)
@@ -10,6 +10,7 @@ h5 Find Trainer/Assistant
   .input-control
     = label_tag "book_location", "Your Address", class: "form-label"
     = text_field_tag "book_location", "", placeholder: "Street, City"
+    = hidden_field_tag "book_trainer"
   .input-control
     = label_tag "book_exercise", "Exercise Type", class: "form-label"
     = select_tag "book_exercise", options_from_collection_for_select(Exercise.all, "id", "name")
