@@ -1,6 +1,7 @@
 .cards
 - @trainers.each do |x|
-  .card
+  .card data-trainer="#{x.id}"
+    .ribbon-wrapper
     .card-image
       img[src="http://lorempixel.com/200/100/people" alt=""]
     .card-header = "#{x.first_name} #{x.last_name}"
