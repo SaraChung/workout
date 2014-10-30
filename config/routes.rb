@@ -19,6 +19,7 @@ Rails.application.routes.draw do
         get "find_trainer"
       end
     end
+    resources :dashboard
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
