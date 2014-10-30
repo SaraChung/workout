@@ -4,7 +4,7 @@ class Users::BooksController < ApplicationController
   def create
     set_user
     set_session
-    if @user.persisted? && @session.persisted?
+    redirect_to users_dashboard_index_path, notice: "Your booking has been sent to trainer_name, trainer_name will send you for the confirmation. Please check your dashboard for the confirmation." if @user.persisted? && @session.persisted?
   end
 
   def find_trainer
@@ -26,7 +26,7 @@ class Users::BooksController < ApplicationController
   end
 
   def set_session
-    @session = Session.create(trainer_id: params[:booker_which_trainer], user_id: @user.id, exercise_id: params[:booker_exercise], from_when: params[:booker_from], to_when: params[:booker_to], status: 0, address: params[:])
+    @session = Session.create(trainer_id: params[:booker_which_trainer], user_id: @user.id, exercise_id: params[:booker_exercise], from_when: params[:booker_from], to_when: params[:booker_to], status: 0, address: params[:booker_location])
   end
 
 end
