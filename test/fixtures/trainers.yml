@@ -1,0 +1,65 @@
+---
+trainer_01:
+  id: 1
+  email: "elissa@trainer.com"
+  password: "elissa1234"
+  first_name: "Elissa"
+  last_name: "Baudelaire"
+  phone_number: 131231381
+  address: "Toronto"
+  latitude: 43.653226
+  longitude: -79.3831843
+  gender: false
+  is_trainer: true
+
+trainer_02:
+  id: 2
+  email: "tron@assistant.com"
+  password: "tronn1234"
+  first_name: "Tron"
+  last_name: "Nom"
+  phone_number: 123123123
+  address: "Toronto"
+  latitude: 43.653226
+  longitude: -79.3831843
+  gender: true
+  is_trainer: false
+
+trainer_03:
+  id: 3
+  email: "nana@trainer.com"
+  password: "nana1234"
+  first_name: "Nana"
+  last_name: "Suharna"
+  phone_number: 33212312
+  address: "Bandung"
+  latitude: -6.914864
+  longitude: 107.608242
+  gender: true
+  is_trainer: true
+
+trainer_04:
+  id: 4
+  email: "adam@assistant.com"
+  password: "adam1234"
+  first_name: "Adam"
+  last_name: "Zaid"
+  phone_number: 12321323
+  address: "Toronto"
+  latitude: 43.653226
+  longitude: -79.3831843
+  gender: true
+  is_trainer: false
+
+trainer_05:
+  id: 5
+  email: "sam@assistant.com"
+  password: "samwise1234"
+  first_name: "Samantha"
+  last_name: "Baudelaire"
+  phone_number: 131231381
+  address: "Toronto"
+  latitude: 43.653226
+  longitude: -79.3831843
+  gender: false
+  is_trainer: false
