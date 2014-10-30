@@ -1,0 +1,16 @@
+---
+exercise_01:
+  id: 1
+  name: "Yoga"
+exercise_02:
+  id: 2
+  name: "Zumba"
+exercise_03:
+  id: 3
+  name: "Cycling"
+exercise_04:
+  id: 4
+  name: "Body Pump"
+exercise_05:
+  id: 5
+  name: "Others"
