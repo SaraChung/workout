@@ -1,0 +1,50 @@
+---
+exercises_trainer_01:
+  trainer_id: 1
+  exercise_id: 1
+
+exercises_trainer_02:
+  trainer_id: 1
+  exercise_id: 2
+
+exercises_trainer_03:
+  trainer_id: 1
+  exercise_id: 3
+
+exercises_trainer_04:
+  trainer_id: 1
+  exercise_id: 4
+
+exercises_trainer_05:
+  trainer_id: 1
+  exercise_id: 5
+
+exercises_trainer_06:
+  trainer_id: 2
+  exercise_id: 1
+
+exercises_trainer_07:
+  trainer_id: 3
+  exercise_id: 5
+
+exercises_trainer_08:
+  trainer_id: 4
+  exercise_id: 2
+
+exercises_trainer_09:
+  trainer_id: 5
+  exercise_id: 5
+
+exercises_trainer_10:
+  trainer_id: 3
+  exercise_id: 1
+
+exercises_trainer_11:
+  trainer_id: 3
+  exercise_id: 2
+
+# trainer with id 1 => "Yoga, Zumba, Cycling, Body Pump, Others"
+# trainer with id 2 => "Yoga"
+# trainer with id 3 => "Others, Yoga, Zumba"
+# trainer with id 4 => "Zumba"
+# trainer with id 5 => "Others"
