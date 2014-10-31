@@ -26,5 +26,5 @@ Feature: Book Trainer/Assistant
     And I choose "false" from "booker_gender"
     And I fill "booker_phone_number" with "+222444555"
     Then I click "Book" button
-    And I should see "Your book has been sent to Elissa! Elissa will send the confirmation."
+    And I should see "Your booking has been sent to Elissa! Elissa will send the confirmation to you."
     And I should see "Please check your dashboard for the confirmation."
