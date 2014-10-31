@@ -3,7 +3,7 @@ session_01:
   id: 1
   trainer_id: 1
   user_id: 1
-  exercise_id:3
+  exercise_id: 3
   from_when: 2014-12-28 13:00:00
   to_when: 2014-12-28 13:45:00
   is_private: true
@@ -13,7 +13,7 @@ session_02:
   id: 2
   trainer_id: 1
   user_id: 1
-  exercise_id:2
+  exercise_id: 2
   from_when: 2014-12-28 14:00:00
   to_when: 2014-12-28 14:45:00
   is_private: false
@@ -23,7 +23,7 @@ session_03:
   id: 3
   trainer_id: 1
   user_id: 2
-  exercise_id:3
+  exercise_id: 3
   from_when: 2014-12-28 14:00:00
   to_when: 2014-12-28 14:45:00
   is_private: true
@@ -33,7 +33,7 @@ session_04:
   id: 4
   trainer_id: 1
   user_id: 3
-  exercise_id:3
+  exercise_id: 3
   from_when: 2014-12-28 14:00:00
   to_when: 2014-12-28 14:45:00
   is_private: false
@@ -43,7 +43,7 @@ session_05:
   id: 5
   trainer_id: 2
   user_id: 3
-  exercise_id:1
+  exercise_id: 1
   from_when: 2014-12-28 14:00:00
   to_when: 2014-12-28 14:45:00
   is_private: true
@@ -53,7 +53,7 @@ session_06:
   id: 6
   trainer_id: 5
   user_id: 5
-  exercise_id:5
+  exercise_id: 5
   from_when: 2014-12-28 14:00:00
   to_when: 2014-12-28 14:45:00
   is_private: false
