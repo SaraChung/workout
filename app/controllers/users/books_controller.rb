@@ -4,7 +4,7 @@ class Users::BooksController < ApplicationController
   def create
     set_user
     set_session
-    redirect_to users_dashboard_index_path, notice: "Your booking has been sent to #{@trainer}, #{@trainer} will send you for the confirmation. Please check your dashboard for the confirmation." if @user.persisted? && @session.persisted?
+    redirect_to users_dashboard_index_path, notice: "Your booking has been sent to #{@trainer}! #{@trainer} will send the confirmation to you. Please check your dashboard for the confirmation." if @user.persisted? && @session.persisted?
   end
 
   def find_trainer
