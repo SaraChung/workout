@@ -1,0 +1,60 @@
+---
+user_01:
+  id: 1
+  email: "nna@user.com"
+  encrypted_password: <%= Devise.bcrypt(User, "131231381") %>
+  first_name: "Anna"
+  last_name: "Baudelaire"
+  phone_number: 131231381
+  address: "Toronto"
+  latitude: 43.653226
+  longitude: -79.3831843
+  gender: false
+
+user_02:
+  id: 2
+  email: "edwin@user.com"
+  encrypted_password: <%= Devise.bcrypt(User, "99998788") %>
+  first_name: "Edwin"
+  last_name: "Lunando"
+  phone_number: 99998788
+  address: "Toronto"
+  latitude: 43.653226
+  longitude: -79.3831843
+  gender: true
+
+user_03:
+  id: 3
+  email: "sasa@user.com"
+  encrypted_password: <%= Devise.bcrypt(User, "11111111") %>
+  first_name: "Sasa"
+  last_name: "Agustina"
+  phone_number: 11111111
+  address: "Bandung"
+  latitude: -6.914864
+  longitude: 107.608242
+  gender: false
+
+user_04:
+  id: 4
+  email: "tintin@user.com"
+  encrypted_password: <%= Devise.bcrypt(User, "10101010") %>
+  first_name: "Tintin"
+  last_name: "Lunando"
+  phone_number: 10101010
+  address: "Bandung"
+  latitude: -6.914864
+  longitude: 107.608242
+  gender: true
+
+user_05:
+  id: 5
+  email: "agus@user.com"
+  encrypted_password: <%= Devise.bcrypt(User, "99999999") %>
+  first_name: "Agus"
+  last_name: "Hana"
+  phone_number: 99999999
+  address: "Toronto"
+  latitude: 43.653226
+  longitude: -79.3831843
+  gender: true

@@ -11,8 +11,3 @@ html
       .wrapper-for-content-outside-of-footer
         = render 'layouts/trainer/content'
         .push
-
-
-      = link_to "Logout", destroy_trainer_session_path, :method=>'delete' if trainer_signed_in?
-      
-      == yield

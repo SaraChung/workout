@@ -1,0 +1,19 @@
+.cards
+- @trainers.each do |x|
+  .card data-trainer="#{x.id}"
+    .ribbon-wrapper
+    .card-image
+      img[src="http://lorempixel.com/200/100/people" alt=""]
+    .card-header = "#{x.first_name} #{x.last_name}"
+    .card-copy
+      .badges
+        - x.exercises.pluck(:name).each do |x|
+          = link_to x, "#", class: "badge"
+          |  
+    .card-stats
+      ul
+        li = x.gender? ? "Male" : "Female"
+        li = x.address
+        li 
+          = x.sessions.where("status = ?", "TRUE").count
+          span Sessions

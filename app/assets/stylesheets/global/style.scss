@@ -1,7 +1,10 @@
 @include font-face(bebas_neueregular, 'bebas_neue/BebasNeue-webfont', normal, $asset-pipeline: true);
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
+$blue-dark: #1880CD;
 body{
 	margin: 0;
+	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .menu-title, a.menu-title{
@@ -34,4 +37,16 @@ body{
 
 .input-control{
 	@include outer-container;
+}
+
+.blue-button{
+	background: $blue-dark;
+	&:hover{
+		background: lighten($blue-dark, 10);
+	}
+}
+
+.booking-fieldset{
+	width: 100%;
+	float: left;
 }

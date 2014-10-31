@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-	# before_filter :authenticate_trainer!
-	def index
-		
-	end
+  def index
+  end
 end

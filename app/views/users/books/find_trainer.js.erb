@@ -1,0 +1,17 @@
+<% if @trainers.count(:all).zero? %>
+  $(".trainer-list").html("Hello");
+<% else %>
+  $(".trainer-list").html("<%=j render partial: 'list' %>");
+<% end %>
+
+$(document).ready(function() {
+  
+  $(".card").click(function(){
+    $(".ribbon-wrapper").html("");
+    trainer = $(this).data("trainer");
+    $("#booker_which_trainer").val(trainer);
+    $(this).find(".ribbon-wrapper").html("<div class='ribbon'>Selected</div>");
+    $(".booking-fieldset").show();
+    get_book();
+  });
+});

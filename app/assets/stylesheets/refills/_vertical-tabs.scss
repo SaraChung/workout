@@ -5,7 +5,7 @@
   $tab-content-background: lighten($tab-border-color, 10);
   $tab-active-color: $tab-content-background;
   $tab-inactive-color: $base-background-color;
-  $vertical-tabs-height: em(300);
+  $vertical-tabs-height: 100%;
   $vertical-tab-mode: $medium-screen;
 
   @include clearfix;
@@ -13,6 +13,8 @@
   border: $tab-border;
   margin-bottom: $base-line-height;
   overflow: hidden;
+  opacity: 0.9;
+  background: #fff;
 
   .vertical-tabs {
     display: none;
@@ -43,11 +45,13 @@
 
   .vertical-tab:focus {
     outline: none; 
+
   }
 
   .vertical-tab-content-container {
     display: block;
     margin: 0 auto;
+    color: black;
 
     & a:focus { 
       outline: none; 

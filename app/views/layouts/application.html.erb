@@ -3,16 +3,13 @@
 <head>
   <title>Workout</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application', "#{controller_name}/#{action_name}" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <%= render 'layouts/public/navigation' %>
 
-<div class="wrapper-for-content-outside-of-footer">
-  <%= render 'layouts/public/content' %>
-  <div class="push"></div>
-</div>
+<%= render 'layouts/public/content' %>
 
 <%= render 'refills/footer' %>
 

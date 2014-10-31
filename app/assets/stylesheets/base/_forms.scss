@@ -3,12 +3,14 @@ fieldset {
   border: 1px solid $base-border-color;
   margin: 0 0 ($base-line-height / 2) 0;
   padding: $base-line-height;
+  text-align: left;
+  opacity: 0.9;
 }
 
 input,
 label,
 select {
-  display: block;
+  // display: block;
   font-family: $form-font-family;
   font-size: $form-font-size;
 }

@@ -21,14 +21,14 @@ fieldset.right-content
           .input-control
             = f.label :gender, class: "form-label"
             .label-checkbox
-              = radio_button("trainer", "gender", "0", id: "trainer_gender")
+              = radio_button("trainer", "gender", false, id: "trainer_gender")
               | Female
             .label-checkbox
-              = radio_button("trainer", "gender", "1", id: "trainer_gender")
+              = radio_button("trainer", "gender", true, id: "trainer_gender")
               | Male
           .input-control
             = label :address, "Address", class: "form-label"
-            = f.text_field :address, placeholder: "your full address here"
+            = f.text_field :address, placeholder: "Street, City"
           .input-control
             = f.label :trainer, "Trainer/Assistant", class: "form-label"
             .label-checkbox
@@ -47,13 +47,13 @@ fieldset.right-content
             = f.label :password_confirmation, class: "form-label"
             = f.password_field :password_confirmation, autocomplete: "off"
           div
-            = f.submit "Sign up"
+            = f.submit "Sign up", class: "blue-button"
 
     li.tab-header-and-content
       a.tab-link[href="#"]
         | Sign in
       section
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        = form_for(resource, as: resource_name, url: session_path('trainer'), html: { id: "trainer_sign_in_form" }) do |f|
           .input-control
             = f.label :email, class: "form-label"
             = f.email_field :email, autofocus: true

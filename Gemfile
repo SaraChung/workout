@@ -6,7 +6,10 @@ gem 'rails', '4.1.6'
 gem 'pg'
 gem 'devise'
 gem 'geocoder'
+
+#Background job, notifications, autoload
 gem 'gon'
+gem 'sidekiq'
 
 #HTML/CSS
 gem 'slim'
@@ -45,9 +48,11 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'selenium-client'
+  gem 'selenium-webdriver'
 end	
 
 group :development do
+  gem 'sidekiq-benchmark'
 	gem 'meta_request'
 	gem "better_errors"
 	gem "binding_of_caller"

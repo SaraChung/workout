@@ -1,4 +1,4 @@
-header.navigation
+header.navigation.fixed
   .menu-wrapper
     p#js-mobile-menu.navigation-menu-button
       | MENU
@@ -9,12 +9,6 @@ header.navigation
         li.nav-link
           a[href="javascript:void(0)"]
             | Products
-        li.nav-link
-          a[href="javascript:void(0)"]
-            | About Us
-        li.nav-link
-          a[href="javascript:void(0)"]
-            | Contact
         li.nav-link.more
           a[href="javascript:void(0)"]
             | More
@@ -26,9 +20,4 @@ header.navigation
               a[href="javascript:void(0)"]
                 | Another Item
     .navigation-tools
-      .search-bar
-        .search-and-submit
-          input[type="search" placeholder="Search for Trainer"]
-          button[type="submit"]
-            img[src="https://raw.githubusercontent.com/Magnus-G/Random/master/search-icon.png" alt=""]
-      = link_to "Logout", destroy_trainer_session_path, :method => 'delete' if trainer_signed_in?
+      = link_to "Logout", destroy_trainer_session_path, :method => 'delete', class: "button" if trainer_signed_in?
