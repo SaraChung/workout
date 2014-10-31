@@ -2,7 +2,7 @@
 trainer_01:
   id: 1
   email: "elissa@trainer.com"
-  password: "elissa1234"
+  encrypted_password: <%= Devise.bcrypt(Trainer, 'password') %>
   first_name: "Elissa"
   last_name: "Baudelaire"
   phone_number: 131231381
@@ -15,7 +15,7 @@ trainer_01:
 trainer_02:
   id: 2
   email: "tron@assistant.com"
-  password: "tronn1234"
+  encrypted_password: <%= Devise.bcrypt(Trainer, 'password') %>
   first_name: "Tron"
   last_name: "Nom"
   phone_number: 123123123
@@ -28,7 +28,7 @@ trainer_02:
 trainer_03:
   id: 3
   email: "nana@trainer.com"
-  password: "nana1234"
+  encrypted_password: <%= Devise.bcrypt(Trainer, 'password') %>
   first_name: "Nana"
   last_name: "Suharna"
   phone_number: 33212312
@@ -41,7 +41,7 @@ trainer_03:
 trainer_04:
   id: 4
   email: "adam@assistant.com"
-  password: "adam1234"
+  encrypted_password: <%= Devise.bcrypt(Trainer, 'password') %>
   first_name: "Adam"
   last_name: "Zaid"
   phone_number: 12321323
@@ -54,7 +54,7 @@ trainer_04:
 trainer_05:
   id: 5
   email: "sam@assistant.com"
-  password: "samwise1234"
+  encrypted_password: <%= Devise.bcrypt(Trainer, 'password') %>
   first_name: "Samantha"
   last_name: "Baudelaire"
   phone_number: 131231381

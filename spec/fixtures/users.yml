@@ -2,7 +2,7 @@
 user_01:
   id: 1
   email: "nna@user.com"
-  password: 131231381
+  encrypted_password: <%= Devise.bcrypt(User, "131231381") %>
   first_name: "Anna"
   last_name: "Baudelaire"
   phone_number: 131231381
@@ -14,7 +14,7 @@ user_01:
 user_02:
   id: 2
   email: "edwin@user.com"
-  password: 99998788
+  encrypted_password: <%= Devise.bcrypt(User, "99998788") %>
   first_name: "Edwin"
   last_name: "Lunando"
   phone_number: 99998788
@@ -26,7 +26,7 @@ user_02:
 user_03:
   id: 3
   email: "sasa@user.com"
-  password: 11111111
+  encrypted_password: <%= Devise.bcrypt(User, "11111111") %>
   first_name: "Sasa"
   last_name: "Agustina"
   phone_number: 11111111
@@ -38,7 +38,7 @@ user_03:
 user_04:
   id: 4
   email: "tintin@user.com"
-  password: 10101010
+  encrypted_password: <%= Devise.bcrypt(User, "10101010") %>
   first_name: "Tintin"
   last_name: "Lunando"
   phone_number: 10101010
@@ -50,7 +50,7 @@ user_04:
 user_05:
   id: 5
   email: "agus@user.com"
-  password: 99999999
+  encrypted_password: <%= Devise.bcrypt(User, "99999999") %>
   first_name: "Agus"
   last_name: "Hana"
   phone_number: 99999999
