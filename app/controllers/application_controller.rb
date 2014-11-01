@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     false if request.xhr?
   end
 
+  def set_user_session
+    sign_in(:user, @user) unless @user.empty?
+  end
+
 end
