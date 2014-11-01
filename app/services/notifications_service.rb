@@ -1,6 +1,5 @@
 class NotificationsService
-  def push_booking_notification(user, trainer)
-    # create a bunch of ActiveRecord models
+  def push_booking_request(user, trainer)
     
   end
 end
