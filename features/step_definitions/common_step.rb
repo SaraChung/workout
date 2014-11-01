@@ -1,3 +1,5 @@
+require 'sidekiq-benchmark/testing'
+
 When(/^I visit let's workout web application$/) do
   visit root_path
 end
