@@ -1,0 +1,23 @@
+header.navigation.fixed
+  .menu-wrapper
+    p#js-mobile-menu.navigation-menu-button
+      | MENU
+    .nav
+      ul#navigation-menu
+        li.nav-link.menu-title
+          = link_to "#{its(current_user.first_name)} Dashboard", "#"
+        li.nav-link
+          a[href="javascript:void(0)"]
+            | Products
+        li.nav-link.more
+          a[href="javascript:void(0)"]
+            | More
+          ul.submenu
+            li
+              a[href="javascript:void(0)"]
+                | Submenu Item
+            li
+              a[href="javascript:void(0)"]
+                | Another Item
+    .navigation-tools
+      = link_to "Logout", destroy_trainer_session_path, :method => 'delete', class: "button" if trainer_signed_in?
