@@ -1,8 +1,9 @@
 class BookingWorker
   include Sidekiq::Worker
-  def perform(user_id)
+  def perform(user_id, trainer_id)
     user = User.find(user_id)
-    registration_service = RegistrationService.new
-    registration_service.register_user(@user)
+    trainer = Trainer.find(trainer_id)
+    push_notification = NotificationsService.new
+    push_notification.push_booking_notification(user, trainer)
   end
 end
