@@ -1,10 +1,13 @@
 class Users::BooksController < ApplicationController
   respond_to :html, :js, only: [:find_trainer]
+  after_filter :set_user_session, only: [:create]
 
   def create
     set_user
-    set_session
-    redirect_to users_dashboard_index_path, notice: "Your booking has been sent to #{@trainer}! #{@trainer} will send the confirmation to you. Please check your dashboard for the confirmation." if @user.persisted? && @session.persisted?
+    if @user.persisted? && @session.persisted?
+      BookingRequestWorker.perform_async(@user.id, params[:booker_which_trainer])
+      redirect_to users_dashboard_index_path, notice: "Your booking has been sent to #{@trainer}! #{@trainer} will send the confirmation to you. Please check your dashboard for the confirmation."
+    end
   end
 
   def find_trainer
@@ -17,12 +20,9 @@ class Users::BooksController < ApplicationController
     DateTime.new(date[:year].to_i, date[:month].to_i, date[:day].to_i, date[:hour].to_i, date[:minute].to_i)
   end
 
-  def set_params
-    
-  end
-
   def set_user
     @user = User.create(first_name: params[:booker_first_name], last_name: params[:booker_last_name], email: params[:booker_email], phone_number: params[:booker_phone_number])
+    set_session
   end
 
   def set_session
