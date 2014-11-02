@@ -21,7 +21,7 @@ class Users::BooksController < ApplicationController
   end
 
   def set_user
-    @user = User.create(first_name: params[:booker_first_name], last_name: params[:booker_last_name], email: params[:booker_email], phone_number: params[:booker_phone_number])
+    @user = User.create(first_name: params[:booker_first_name], last_name: params[:booker_last_name], email: params[:booker_email], phone_number: params[:booker_phone_number], address: params[:booker_location])
     set_session
   end
 
