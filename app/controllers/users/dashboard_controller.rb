@@ -1,7 +1,4 @@
-class Users::DashboardController < ApplicationController
-  before_filter :authenticate_user!
-
-  layout 'user_dashboard'
+class Users::DashboardController < UsersController
 
   def index
     
