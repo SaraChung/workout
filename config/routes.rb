@@ -19,6 +19,11 @@ Rails.application.routes.draw do
         get "find_trainer"
       end
     end
+    resources :registered_books do
+      collection do
+        get "find_trainer"
+      end
+    end
     resources :dashboard
   end
   # Example of regular route:
