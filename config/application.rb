@@ -28,5 +28,6 @@ module Workout
     # config.i18n.default_locale = :de
     config.autoload_paths += %W(#{config.root}/app/workers)
     config.autoload_paths += %W(#{config.root}/app/services)
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end
