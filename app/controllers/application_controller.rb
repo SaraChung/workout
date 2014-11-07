@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_user_session
-    sign_in(:user, @user) unless @user.empty?
+    sign_in(:user, @user) if @user
   end
 
 end
