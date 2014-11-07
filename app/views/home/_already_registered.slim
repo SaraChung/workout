@@ -1,0 +1,36 @@
+h5 Find Trainer/Assistant
+
+= form_tag(users_registered_books_path, id: "registered_user_form")
+  .input-control
+    = label_tag "rbook_time", "Date and Time", class: "form-label"
+    = select_datetime(Time.now, discard_year: true, start_hour: 6, end_hour: 22, ampm: true, prefix: "rbook_time", minute_step: 15)
+  .input-control
+    = label_tag "rbook_range", "How many minutes", class: "form-label"
+    = select_tag "rbook_range", options_for_select([ 30, 45, 60, 90 ], 45)
+    = hidden_field_tag "rbook_trainer"
+    = hidden_field_tag "rbook_from"
+    = hidden_field_tag "rbook_to"
+  .input-control
+    = label_tag "rbook_exercise", "Exercise Type", class: "form-label"
+    = select_tag "rbook_exercise", options_from_collection_for_select(Exercise.all, "id", "name")
+  .input-control
+    = label_tag "rbook_is_trainer", "Trainer/Assistant", class: "form-label"
+    .label-checkbox
+      = radio_button("rbook", "is_trainer", true, id: "rtrainer_is_trainer")
+      | Trainer
+    .label-checkbox
+      = radio_button("rbook", "is_trainer", false, id: "rtrainer_is_trainer")
+      | Assistant
+  hr
+  .input-control
+    = label_tag "rbook_email", "Email", class: "form-label"
+    = text_field_tag "rbook_email", "", placeholder: "Your email here"
+  .input-control
+    = label_tag "rbook_phone", "Phone Number", class: "form-label"
+    = text_field_tag "rbook_phone", "", placeholder: "Your phone number here"
+  hr
+  div
+      = submit_tag "Book Trainer", class: "blue-button", id: "registered_submit_button", disabled: true
+
+div
+  = button_tag "Find", { class: "blue-button", id: "find_trainer" }
