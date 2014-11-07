@@ -1,0 +1,8 @@
+.title-content
+  .line-behind-text
+    h4.center-header Feeds
+.content-field
+  .feeds
+  - unless @notifications.nil?
+    - @notifications.each do |notif|
+      #feed = notif.short_message
