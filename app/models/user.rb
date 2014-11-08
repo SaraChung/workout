@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :trainers, through: :sessions
   
   scope :where_is, -> (email) { where("email = ?", email).pluck(:address)[0] }
+  scope :who_is, -> (email) { where("email = ?", email).pluck(:first_name, :last_name).flatten }
 
   before_validation do
     self.password = self.phone_number
