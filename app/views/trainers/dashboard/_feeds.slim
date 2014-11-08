@@ -5,4 +5,4 @@
   .feeds
   - unless @notifications.nil?
     - @notifications.each do |notif|
-      #feed = notif.short_message
+      #feed = notif.short_message.gsub(/\[(.*?)\]/, User.who_is(get_inside_bracket(notif.short_message)).join(" "))
