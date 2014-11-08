@@ -5,6 +5,8 @@ class Trainers::DashboardController < TrainersController
     
   end
 
+  private
+
   def load_feeds
     @notifications ||= Notification.trainer_feeds(current_trainer.id)
   end
