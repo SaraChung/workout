@@ -5,4 +5,7 @@
   .feeds
   - unless @notifications.nil?
     - @notifications.each do |notif|
-      #feed = notif.short_message.gsub(/\[(.*?)\]/, User.who_is(get_inside_bracket(notif.short_message)).join(" "))
+      #feed 
+        = notif.short_message.gsub(/\[(.*?)\]/, User.who_is(get_inside_bracket(notif.short_message)).join(" "))
+        #feed-caption = "on #{notif.created_at.to_formatted_s(:long)}"
+  #feed-link = link_to "Show all notifications", root_path, class: "center-link"
