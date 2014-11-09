@@ -1,9 +1,13 @@
 class Trainers::DashboardController < TrainersController
-  before_filter :load_feeds, only: :index
+  before_filter :load_feeds, only: [:index, :latest_feeds]
 
   def index
     gon.watch.notif = @notifications
     gon.watch.count_unread = @count_unread
+  end
+
+  def latest_feeds
+    
   end
 
   private
