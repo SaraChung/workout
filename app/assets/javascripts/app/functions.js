@@ -32,3 +32,11 @@ var registered_user_booking = function(){
         $.ajax({ url: "/users/registered_books/find_trainer?exercise="+$("#rbook_exercise").val()+"&from="+dateFrom+"&to="+dateTo+"&trainer="+$("#rtrainer_is_trainer").val()+"&user_email="+$("#rbook_email").val() });
     });
 }
+
+var view_notification = function(){
+    $(".feed").click(function(){
+        $.get("/trainers/notifications/show", { notif_id: $(this).data("feed") });
+        $(".modal-state").prop('checked', true);
+        $(this).removeClass("unread").addClass("read");
+    });
+}
