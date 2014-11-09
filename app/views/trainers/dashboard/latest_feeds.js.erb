@@ -1,0 +1,7 @@
+<% unless @notifications.nil? %>
+  $(".feeds").html("<%=j render partial: 'feeds' %>");
+<% end %>
+
+$(document).ready(function() {
+  view_notification();
+});
