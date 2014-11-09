@@ -28,7 +28,6 @@ var registered_user_booking = function(){
     dateFrom = moment({ y: $("#rbook_time_year").val(), M: $("#rbook_time_month").val(), d: $("#rbook_time_day").val(), h: $("#rbook_time_hour").val(), m: $("#rbook_time_minute").val() }).format("YYYY-M-DD HH:mm");
     dateTo = moment(dateFrom).add($("#rbook_range").val(), 'm').format("YYYY-M-DD HH:mm");
     $("#find_trainer").click(function(){
-        alert(dateFrom);
         $.ajax({ url: "/users/registered_books/find_trainer?exercise="+$("#rbook_exercise").val()+"&from="+dateFrom+"&to="+dateTo+"&trainer="+$("#rtrainer_is_trainer").val()+"&user_email="+$("#rbook_email").val() });
     });
 }
