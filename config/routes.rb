@@ -10,7 +10,16 @@ Rails.application.routes.draw do
   
   namespace :trainers do
     resources :skills, only: [:new, :create]
-    resources :dashboard, only: [:index]
+    resources :dashboard, only: [:index] do
+      collection do
+        get "latest_feeds"
+      end
+    end
+    resources :notifications do
+      collection do
+        get "latest_feeds"
+      end
+    end
   end
 
   namespace :users do
