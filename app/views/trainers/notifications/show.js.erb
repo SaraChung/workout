@@ -1,0 +1,4 @@
+<% unless @notification.nil? %>
+  $(".modal-window").html("<%=j render partial: 'trainers/dashboard/modal', locals: { notif: @notification} %>");  
+  $(".modal-state").prop('checked', true);
+<% end %>
