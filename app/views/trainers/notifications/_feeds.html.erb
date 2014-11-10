@@ -5,5 +5,5 @@
       <div id="feed-caption">on <%= notif.created_at.to_formatted_s(:long) %></div>
     </div>
   <% end %>
-  <div id="feed-link"><%= link_to "Show all notifications", trainers_notifications_path, class: "center-link" %></div>
+  <div id="feed-link"><%= paginate @notifications, :remote => true %></div>
 <% end %>
