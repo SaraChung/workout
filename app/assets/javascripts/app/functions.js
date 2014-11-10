@@ -39,3 +39,7 @@ var view_notification = function(){
         $(this).removeClass("unread").addClass("read");
     });
 }
+
+var renewNotifCount = function(count) {
+  return $('#notifications-counter').text(count);
+};
