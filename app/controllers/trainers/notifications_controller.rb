@@ -19,7 +19,7 @@ class Trainers::NotificationsController < TrainersController
   private
 
   def load_feeds
-    @notifications ||= Notification.trainer_feeds(current_trainer.id)
+    @notifications ||= Notification.trainer_feeds(current_trainer.id).page params[:page]
     @count_unread ||= Notification.count_unread(current_trainer.id)
   end
 
