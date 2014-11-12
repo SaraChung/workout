@@ -1,0 +1,16 @@
+<% if @trainers.count(:all).zero? %>
+  $(".trainer-list").html("Hello");
+<% else %>
+  $(".trainer-list").html("<%=j render partial: 'users/books/list' %>");
+<% end %>
+
+$(document).ready(function() {
+  
+  $(".card").click(function(){
+    $(".ribbon-wrapper").html("");
+    trainer = $(this).data("trainer");
+    $(this).find(".ribbon-wrapper").html("<div class='ribbon'>Selected</div>");
+    $("#registered_submit_button").removeAttr("disabled");
+    get_registered_book(trainer);
+  });
+});

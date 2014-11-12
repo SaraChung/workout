@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require app/moment.min
-//= require public/functions
+//= require app/functions
 //= require public/navigation
 //= require public/vertical-tabs
 //= require public/accordion-tabs-minimal

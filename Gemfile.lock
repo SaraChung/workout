@@ -113,6 +113,9 @@ GEM
       thor (>= 0.14, < 2.0)
     jsmin (1.0.1)
     json (1.8.1)
+    kaminari (0.16.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     meta_request (0.3.4)
@@ -258,6 +261,7 @@ DEPENDENCIES
   gon
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   meta_request
   neat (= 1.5.1)
   pg

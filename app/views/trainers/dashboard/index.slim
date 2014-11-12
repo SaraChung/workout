@@ -1,1 +1,11 @@
-h1 Trainer Dashboard
+.title-content
+  .line-behind-text
+    h4.center-header Latest Feeds
+  .content-field
+    .feeds
+      = render "feeds"
+
+.modal
+  label[for="modal-1"]
+  input#modal-1.modal-state[type="checkbox"]
+  .modal-window

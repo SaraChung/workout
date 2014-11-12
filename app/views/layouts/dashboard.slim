@@ -3,11 +3,11 @@ html
   head
     title Dashboard
     = stylesheet_link_tag    'dashboard', media: 'all'
-    = javascript_include_tag 'dashboard'
-
+    = include_gon(watch: true)
+    = javascript_include_tag 'dashboard', params[:controller]
   body
     #content
-      = render 'layouts/trainer/navigation'
+      = render load_navigation
       .wrapper-for-content-outside-of-footer
-        = render 'layouts/trainer/content'
+        = render load_content
         .push

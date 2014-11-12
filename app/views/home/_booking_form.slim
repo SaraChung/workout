@@ -1,16 +1,17 @@
 fieldset
   = form_tag users_books_path, id: "booking_form"
     .input-control
-      | #{text_field_tag "booker_first_name", "", placeholder: "First Name"} 
-      | #{text_field_tag "booker_last_name", "", placeholder: "Last Name"} 
-      | #{text_field_tag "booker_email", "", placeholder: "Your Email"} 
-      | #{text_field_tag "booker_phone_number", "", placeholder: "Your Phone Number"} 
-      | #{hidden_field_tag "booker_from"} 
-      | #{hidden_field_tag "booker_to"} 
-      | #{hidden_field_tag "booker_trainer"} 
-      | #{hidden_field_tag "booker_which_trainer"} 
-      | #{hidden_field_tag "booker_exercise"} 
-      | #{hidden_field_tag "booker_location"} 
+      | #{text_field_tag "booker_first_name", "", placeholder: "First Name"}
+      | #{text_field_tag "booker_last_name", "", placeholder: "Last Name"}
+      | #{text_field_tag "booker_email", "", placeholder: "Your Email"}
+      | #{text_field_tag "booker_phone_number", "", placeholder: "Your Phone Number"}
+      | #{hidden_field_tag "booker_from"}
+      | #{hidden_field_tag "booker_to"}
+      | #{hidden_field_tag "booker_trainer"}
+      | #{hidden_field_tag "booker_which_trainer"}
+      | #{hidden_field_tag "booker_exercise"}
+      | #{hidden_field_tag "booker_location"}
+      | #{hidden_field_tag "booker_is_private"}
     .input-control
       = label_tag :gender, "Gender"
       .label-checkbox

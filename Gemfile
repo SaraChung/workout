@@ -21,6 +21,9 @@ gem 'refills'
 #Presentation support
 gem 'draper', '~> 1.3'
 
+#Pagination
+gem 'kaminari'
+
 # Use SCSS for stylesheets
 gem 'sass'
 # Use Uglifier as compressor for JavaScript assets

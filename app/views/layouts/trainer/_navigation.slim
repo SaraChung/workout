@@ -6,18 +6,15 @@ header.navigation.fixed
       ul#navigation-menu
         li.nav-link.menu-title
           = link_to "#{@trainer.is_trainer} Dashboard", "#"
-        li.nav-link
-          a[href="javascript:void(0)"]
-            | Products
-        li.nav-link.more
-          a[href="javascript:void(0)"]
-            | More
+        li.nav-link.more 
+          = link_to "Workouts", root_path
           ul.submenu
-            li
-              a[href="javascript:void(0)"]
-                | Submenu Item
-            li
-              a[href="javascript:void(0)"]
-                | Another Item
+            li = link_to "Past Workouts", root_path 
+            li = link_to "Upcoming Workouts", root_path 
+
     .navigation-tools
+      ul#navigation-menu
+        li.nav-link.badges 
+          = link_to "Notifications ", "#"
+          span.badge#notifications-counter = @count_unread
       = link_to "Logout", destroy_trainer_session_path, :method => 'delete', class: "button" if trainer_signed_in?

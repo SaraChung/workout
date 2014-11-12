@@ -1,0 +1,9 @@
+<% unless @notifications.nil? 
+  @notifications.each do |notif| %>
+    <div class="feed <%= notif.is_read? ? 'read' : 'unread' %>" data-feed="<%= notif.id %>">
+      <%= notif.short_message.gsub(/\[(.*?)\]/, User.who_is(get_inside_bracket(notif.short_message)).join(" ")) %>
+      <div id="feed-caption">on <%= notif.created_at.to_formatted_s(:long) %></div>
+    </div>
+  <% end %>
+  <div id="feed-link"><%= link_to "Show all notifications", trainers_notifications_path, class: "center-link" %></div>
+<% end %>
