@@ -22,5 +22,8 @@ h5 Find Trainer/Assistant
     .label-checkbox
       = radio_button("book", "is_trainer", false, id: "trainer_is_trainer")
       | Assistant
+  .input-control
+    = label_tag "book_is_private", "Private?", class: "form-label"
+    = select_tag "book_is_private", options_for_select([["Yes", "true"], ["No", "false"]], "false")
   div
     = submit_tag "Find", class: "blue-button"

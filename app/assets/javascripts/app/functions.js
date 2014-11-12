@@ -6,6 +6,7 @@ var get_book = function(){
     $("#booker_trainer").val($("#trainer_is_trainer").val());
     $("#booker_exercise").val($("#book_exercise").val());
     $("#booker_location").val($("#book_location").val());
+    $("#booker_is_private").val($("#book_is_private").val());
 }
 
 var get_registered_book = function(trainer_id){

@@ -26,7 +26,7 @@ class Users::BooksController < ApplicationController
   end
 
   def set_session
-    @session = Session.create(trainer_id: params[:booker_which_trainer], user_id: @user.id, exercise_id: params[:booker_exercise], from_when: params[:booker_from], to_when: params[:booker_to], status: 0)
+    @session = Session.create(trainer_id: params[:booker_which_trainer], user_id: @user.id, exercise_id: params[:booker_exercise], from_when: params[:booker_from], to_when: params[:booker_to], status: 0, is_private: params[:booker_is_private])
     @trainer = Trainer.who_is(params[:booker_which_trainer])[0]
   end
 

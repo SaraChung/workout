@@ -21,6 +21,9 @@ h5 Find Trainer/Assistant
     .label-checkbox
       = radio_button("rbook", "is_trainer", false, id: "rtrainer_is_trainer")
       | Assistant
+  .input-control
+    = label_tag "rbook_is_private", "Private?", class: "form-label"
+    = select_tag "rbook_is_private", options_for_select([["Yes", "true"], ["No", "false"]])
   hr
   .input-control
     = label_tag "rbook_email", "Email", class: "form-label"
