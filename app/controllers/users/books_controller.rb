@@ -7,6 +7,8 @@ class Users::BooksController < ApplicationController
     if @user.persisted? && @session.persisted?
       BookingRequestWorker.perform_async(@user.id, params[:booker_which_trainer], @session.id)
       redirect_to users_dashboard_index_path, notice: "Your booking has been sent to #{@trainer}! #{@trainer} will send the confirmation to you. Please check your dashboard for the confirmation."
+    else
+      redirect_to root_path
     end
   end
 
