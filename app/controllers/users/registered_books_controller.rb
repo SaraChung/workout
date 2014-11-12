@@ -5,7 +5,7 @@ class Users::RegisteredBooksController < ApplicationController
   def create
     set_user
     if @user.persisted? && @session.persisted?
-      BookingRequestWorker.perform_async(@user.id, params[:rbook_trainer], @session.id)
+      BookingRequestWorker.perform_async(@user.id, params[:rbook_trainer], @session.id, trainers_workout_session_path(@session.id))
       redirect_to users_dashboard_index_path, notice: "Your booking has been sent to #{@trainer}! #{@trainer} will send the confirmation to you. Please check your dashboard for the confirmation."
     else
       redirect_to root_path
