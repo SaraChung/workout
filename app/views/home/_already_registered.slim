@@ -23,7 +23,7 @@ h5 Find Trainer/Assistant
       | Assistant
   .input-control
     = label_tag "rbook_is_private", "Private?", class: "form-label"
-    = select_tag "rbook_is_private", options_for_select([["Yes", "true"], ["No", "false"]])
+    = select_tag "rbook_is_private", options_for_select([["Yes", "true"], ["No", "false"]], "false")
   hr
   .input-control
     = label_tag "rbook_email", "Email", class: "form-label"
