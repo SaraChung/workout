@@ -14,18 +14,59 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
+development:
   adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  encoding: utf8
+  database: workout_development
   pool: 5
   username: postgres
   password: 1234
 
-development:
-  <<: *default
-  database: workout_development
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: workout_test
+  pool: 5
+  username: postgres
+  password: 1234
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: workout_production
+  pool: 5
+  username: postgres
+  password: 1234
+
+
+
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   # For details on connection pooling, see rails configuration guide
+#   # http://guides.rubyonrails.org/configuring.html#database-pooling
+#   pool: 5
+#   username: postgres
+#   password: 1234
+
+# development:
+#   <<: *default
+#   database: workout_development
+
+# test: &test
+#   <<: *default
+#   database: workout_test
+
+# production:
+#   <<: *default
+#   database: workout_production
+#   username: workout
+#   password: <%= ENV['WORKOUT_DATABASE_PASSWORD'] %>
+
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,9 +98,7 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test: &test
-  <<: *default
-  database: workout_test
+
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,11 +119,7 @@ test: &test
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: workout_production
-  username: workout
-  password: <%= ENV['WORKOUT_DATABASE_PASSWORD'] %>
+
 
 cucumber:
   <<: *test
