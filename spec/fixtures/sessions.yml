@@ -4,8 +4,8 @@ session_01:
   trainer_id: 1
   user_id: 1
   exercise_id: 3
-  from_when: 2014-12-28 13:00:00
-  to_when: 2014-12-28 13:45:00
+  from_when: 2014-12-28 13:00
+  to_when: 2014-12-28 13:45
   is_private: true
   status: true
 
@@ -14,8 +14,8 @@ session_02:
   trainer_id: 1
   user_id: 1
   exercise_id: 2
-  from_when: 2014-12-28 14:00:00
-  to_when: 2014-12-28 14:45:00
+  from_when: 2014-12-28 14:00
+  to_when: 2014-12-28 14:45
   is_private: false
   status: false
 
@@ -24,8 +24,8 @@ session_03:
   trainer_id: 1
   user_id: 2
   exercise_id: 3
-  from_when: 2014-12-28 14:00:00
-  to_when: 2014-12-28 14:45:00
+  from_when: 2014-12-28 14:00
+  to_when: 2014-12-28 14:45
   is_private: true
   status: false
 
@@ -34,8 +34,8 @@ session_04:
   trainer_id: 1
   user_id: 3
   exercise_id: 3
-  from_when: 2014-12-28 14:00:00
-  to_when: 2014-12-28 14:45:00
+  from_when: 2014-12-28 14:00
+  to_when: 2014-12-28 14:45
   is_private: false
   status: false
 
@@ -44,8 +44,8 @@ session_05:
   trainer_id: 2
   user_id: 3
   exercise_id: 1
-  from_when: 2014-12-28 14:00:00
-  to_when: 2014-12-28 14:45:00
+  from_when: 2014-12-28 14:00
+  to_when: 2014-12-28 14:45
   is_private: true
   status: false
 
@@ -54,7 +54,7 @@ session_06:
   trainer_id: 5
   user_id: 5
   exercise_id: 5
-  from_when: 2014-12-28 14:00:00
-  to_when: 2014-12-28 14:45:00
+  from_when: 2014-12-28 14:00
+  to_when: 2014-12-28 14:45
   is_private: false
   status: false
