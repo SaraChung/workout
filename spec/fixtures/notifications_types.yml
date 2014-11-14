@@ -1,0 +1,11 @@
+---
+notifications_type_01:
+  id: 1
+  name: Booking Request
+  subject: User
+  object: Trainer
+notifications_type_02:
+  id: 2
+  name: Booking Confirmation
+  subject: Trainer
+  object: User
