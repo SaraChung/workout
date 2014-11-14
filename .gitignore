@@ -20,3 +20,7 @@ db/schema.rb
 config/database.yml
 app/views/refills/
 stylesheets
+
+config/database.yml
+
+db/schema.rb
