@@ -4,6 +4,15 @@ When(/^I visit let's workout web application$/) do
   visit root_path
 end
 
+Then(/^I go to sign in as a trainer uses "(.*?)" email$/) do |email|
+  trainer = Trainer.find_by_email(email)
+  visit '/trainers/sign_up'
+  click_link "Sign in"
+  fill_in "trainer_email", :with => email
+  fill_in "trainer_password", :with => "password"
+  click_button "Log in"
+end
+
 Then(/^I should see "(.*?)"$/) do |content|
   page.should have_content("#{content}")
 end
