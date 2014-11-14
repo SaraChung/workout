@@ -3,7 +3,8 @@
 <head>
   <title>Workout</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application', "#{controller_name}/#{action_name}" %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "#{params[:controller]}/#{action_name}.js" if ::Rails.application.assets.find_asset("#{params[:controller]}/#{action_name}.js") %>
   <%= csrf_meta_tags %>
 </head>
 <body>

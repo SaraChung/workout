@@ -1,0 +1,12 @@
+---
+notification_01:
+  id: 1
+  notifications_type_id: 1
+  subject_id: 1
+  obj_id: 1
+  title: "You have new booking request!"
+  short_message: "[nna@user.com] send a booking request to you."
+  long_message: "[nna@user.com] send a booking request to you. Anna's phone number is 131231381."
+  is_read: false
+  object_hash: "{ session_id: 2, trainer_id: 1, user_id: 1 }"
+  url: "/trainers/workout_sessions/2"
