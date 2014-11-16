@@ -20,7 +20,11 @@ Rails.application.routes.draw do
         get "latest_feeds"
       end
     end
-    resources :workout_sessions
+    resources :workout_sessions do
+      member do
+        post "update_status"
+      end
+    end
   end
 
   namespace :users do
