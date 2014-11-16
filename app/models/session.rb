@@ -2,7 +2,7 @@ class Session < ActiveRecord::Base
   belongs_to :user
   belongs_to :trainer
 
-  default_scope { eager_load(:users, :trainers) }
+  default_scope { eager_load(:user, :trainer) }
   scope :whose, -> (trainer_id) { where trainer_id: trainer_id }
   scope :accepted, -> { where status: true }
   scope :declined, -> { where status: false }
