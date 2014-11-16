@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include CustomField
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,5 +16,4 @@ class User < ActiveRecord::Base
   before_validation do
     self.password = self.phone_number
   end
-  
 end
