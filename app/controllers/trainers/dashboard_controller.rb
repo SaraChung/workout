@@ -3,7 +3,6 @@ class Trainers::DashboardController < TrainersController
 
   def index
     gon.watch.notif = @notifications
-    gon.watch.count_unread = @count_unread
   end
 
   def latest_feeds
@@ -14,6 +13,5 @@ class Trainers::DashboardController < TrainersController
 
   def load_feeds
     @notifications ||= Notification.trainer_feeds(current_trainer.id).limit(10)
-    @count_unread ||= Notification.count_unread(current_trainer.id)
   end
 end

@@ -1,6 +1,7 @@
 class TrainersController < ApplicationController 
   before_filter :authenticate_trainer!
-  before_filter :init_trainer
+  before_filter :init_variables
+  before_filter :init
   layout :xhr_request?
   
   private
@@ -9,7 +10,12 @@ class TrainersController < ApplicationController
     request.xhr? ? false : 'dashboard'
   end
 
-  def init_trainer
+  def init_variables
     @trainer ||= current_trainer.decorate
+    @count_unread ||= Notification.count_unread_trainer(current_trainer.id)
+  end
+
+  def init
+    gon.watch.count_unread = @count_unread
   end
 end

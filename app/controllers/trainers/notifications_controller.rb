@@ -3,8 +3,6 @@ class Trainers::NotificationsController < TrainersController
   before_filter :load_feeds, only: [:index, :latest_feeds]
   
   def index
-    # gon.watch.notif = @notifications
-    gon.watch.count_unread = @count_unread
   end
 
   def show
@@ -20,7 +18,6 @@ class Trainers::NotificationsController < TrainersController
 
   def load_feeds
     @notifications ||= Notification.trainer_feeds(current_trainer.id).page params[:page]
-    @count_unread ||= Notification.count_unread(current_trainer.id)
   end
 
 end
