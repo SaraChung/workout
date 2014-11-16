@@ -8,4 +8,12 @@ class Session < ActiveRecord::Base
   scope :declined, -> { where status: false }
   scope :past_workouts, -> { where("to_when < ?", Time.now) }
   scope :upcoming_workouts, -> { where("to_when > ?", Time.now) }
+
+  def status
+    self.status? ? "Accepted" : "Declined"
+  end
+
+  def is_private
+    self.is_private? ? "Yes" : "No"
+  end
 end
