@@ -7,10 +7,10 @@ header.navigation.fixed
         li.nav-link.menu-title
           = link_to "#{@trainer.is_trainer} Dashboard", trainers_dashboard_index_path
         li.nav-link.more 
-          = link_to "Workouts", root_path
+          = link_to "Workouts", trainers_workout_sessions_path
           ul.submenu
-            li = link_to "Past Workouts", root_path 
-            li = link_to "Upcoming Workouts", root_path 
+            li = link_to "Past Workouts", trainers_workout_sessions_path(time: "past")
+            li = link_to "Upcoming Workouts", trainers_workout_sessions_path(time: "upcoming") 
 
     .navigation-tools
       ul#navigation-menu
