@@ -11,6 +11,7 @@ class Trainers::WorkoutSessionsController < TrainersController
 
   def update_status
     @workout.update_attributes(status: params[:status])
+    BookingConfirmationWorker.perform_async(current_trainer.id, @workout.id, users_workout_session_path(@workout.id))
     head :ok
   end
 
