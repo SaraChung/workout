@@ -104,3 +104,16 @@ span.page, span.next, span.last, span.prev, span.first{
 span.page a{
   @include padding(0 0.3% 0 0.3%);
 }
+
+.half-left, .half-right{
+  width: 49%;
+  display: inline-block;
+}
+
+.half-right{
+  margin-left: 0.5%; 
+}
+
+.half-left{
+  margin-right: 0.5%; 
+}
