@@ -39,6 +39,7 @@ Rails.application.routes.draw do
       end
     end
     resources :dashboard
+    resources :workout_sessions
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
