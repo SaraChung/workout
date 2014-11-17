@@ -5,7 +5,7 @@ header.navigation.fixed
     .nav
       ul#navigation-menu
         li.nav-link.menu-title
-          = link_to "#{@trainer.is_trainer} Dashboard", "#"
+          = link_to "#{@trainer.is_trainer} Dashboard", trainers_dashboard_index_path
         li.nav-link.more 
           = link_to "Workouts", root_path
           ul.submenu
