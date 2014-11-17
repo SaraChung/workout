@@ -1,0 +1,19 @@
+section
+  table
+    tbody
+    - unless @workouts.nil?
+      tr
+        td Workout sessions request to you
+        td colspan="3" = @workouts.upcoming_workouts.count
+      tr
+        td Accepted upcoming workout sessions
+        td colspan="3" = @workouts.upcoming_workouts.accepted.count
+      tr
+        td Past workout sessions
+        td colspan="3" = @workouts.past_workouts.count
+      tr
+        td Accepted past workout sessions
+        td colspan="3" = @workouts.past_workouts.accepted.count
+      tr
+        td Declined past workout sessions
+        td colspan="3" = @workouts.past_workouts.declined.count
