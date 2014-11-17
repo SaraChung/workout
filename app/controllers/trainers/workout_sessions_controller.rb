@@ -1,5 +1,6 @@
 class Trainers::WorkoutSessionsController < TrainersController
   before_filter :find_workout, only:[:show, :update_status, :delete]
+  before_filter :workouts, only:[:index]
 
   def index
     
