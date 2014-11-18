@@ -3,7 +3,7 @@ class Trainers::WorkoutSessionsController < TrainersController
   before_filter :workouts, only:[:index]
 
   def index
-    
+    render params[:time] if params[:time]
   end
 
   def show
@@ -19,7 +19,7 @@ class Trainers::WorkoutSessionsController < TrainersController
   private
 
   def workouts
-    @workouts ||= Session.whose(current_trainer.id).order("sessions.created_at DESC")
+    @workouts ||= Session.whose(current_trainer.id).order("sessions.from_when ASC")
   end
 
   def find_workout
