@@ -1,0 +1,14 @@
+table
+  thead
+    tr
+      th Full Name
+      th When
+      th Exercise
+      th Is Private?
+  tbody
+  - workouts.each do |workout|
+    tr
+      td = workout.user.full_name
+      td = "#{workout.from_when.to_formatted_s(:short)} - #{workout.to_when.to_formatted_s(:time)}"
+      td = workout.exercise.name
+      td = workout.is_private
