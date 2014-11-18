@@ -19,7 +19,7 @@ class Trainers::WorkoutSessionsController < TrainersController
   private
 
   def workouts
-    @workouts ||= Session.whose(current_trainer.id)
+    @workouts ||= Session.whose(current_trainer.id).order("sessions.created_at DESC")
   end
 
   def find_workout
