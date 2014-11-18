@@ -1,6 +1,7 @@
 class Session < ActiveRecord::Base
   belongs_to :user
   belongs_to :trainer
+  belongs_to :exercise
 
   default_scope { eager_load(:user, :trainer) }
   scope :whose, -> (trainer_id) { where trainer_id: trainer_id }
