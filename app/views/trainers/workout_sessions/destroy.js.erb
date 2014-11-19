@@ -1,0 +1,3 @@
+<% if @workout.destroyed? %>
+  $("#workout_<%= params[:index] %>").remove();
+<% end %>
