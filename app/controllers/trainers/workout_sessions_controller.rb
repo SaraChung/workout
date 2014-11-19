@@ -11,7 +11,7 @@ class Trainers::WorkoutSessionsController < TrainersController
   end
 
   def destroy
-    WorkoutRemovalWorker.perform_async(current_trainer.id, "Trainer", @workout.user.id, "User", @workout.id)
+    WorkoutsRemovalWorker.perform_async(current_trainer.id, "Trainer", @workout.user.id, "User", @workout.id)
   end
 
   def update_status
