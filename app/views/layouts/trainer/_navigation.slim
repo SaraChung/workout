@@ -15,6 +15,6 @@ header.navigation.fixed
     .navigation-tools
       ul#navigation-menu
         li.nav-link.badges 
-          = link_to "Notifications ", "#"
+          = link_to "Notifications ", trainers_notifications_path
           span.badge#notifications-counter = @count_unread
       = link_to "Logout", destroy_trainer_session_path, :method => 'delete', class: "button" if trainer_signed_in?
