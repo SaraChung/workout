@@ -9,6 +9,11 @@ class NotificationsService
     Notification.create(notifications_type_id: type, subject_id: trainer.id, obj_id: session.user.id, title: "You receive workout session confirmation from #{trainer_assistant(trainer.is_trainer)}!", short_message: "[#{trainer.email}] send a confirmation to you.", long_message: "Your workout session request is #{session.status.downcase}. #{its(trainer.first_name)} phone number is #{trainer.phone_number}.", url: url, object_hash: "{ session_id: #{session.id}, trainer_id: #{trainer.id}, user_id: #{session.user.id} }")    
   end
 
+  def push_workout_removal(subj, subject, target, obj, session)
+    type = subject == "Trainer" ? NotificationsType.what_id("Workout Removal (Trainer)") : NotificationsType.what_id("Workout Removal (User)") 
+    Notification.create(notifications_type_id: type, subject_id: subj.id, obj_id: target.id, title: "Workout session has been removed!", short_message: "[#{subj.email}] removed a workout session.", long_message: "This workout session was removed. Details: <li>From #{session.from_when.to_formatted_s(:short)} to #{session.to_when.to_formatted_s(:time)}</li><li>#{subject == 'Trainer' ? 'Trainer' : 'User'}: #{subj.full_name}</li>", url: "#", object_hash: "{ session_id: #{session.id}, trainer_id: #{trainer.id}, user_id: #{session.user.id} }")    
+  end
+
   def its(name)
     name.last == "s" ? name + "'" : name + "'s"
   end
@@ -16,5 +21,4 @@ class NotificationsService
   def trainer_assistant(is_trainer)
     is_trainer == true ? "Trainer" : "Assistant"
   end
-
 end
