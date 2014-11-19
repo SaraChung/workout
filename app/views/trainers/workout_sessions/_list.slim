@@ -6,13 +6,17 @@ table
       th Exercise
       th Is Private?
       th Status
+      th
   tbody
-  - workouts.each do |workout|
-    tr
+  - workouts.each_with_index do |workout, index|
+    tr id="workout_#{index}"
       td = workout.user.full_name
       td = "#{workout.from_when.to_formatted_s(:short)} - #{workout.to_when.to_formatted_s(:time)}"
       td = workout.exercise.name
       td = workout.is_private
       td = workout.status
+      td 
+        = link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, trainers_workout_session_path(id: workout.id, index: index), method: :delete, data: { confirm: "Are you sure to remove this session?", remote: true }
+        = link_to '<i class="fa fa-eye fa-lg"></i>'.html_safe, trainers_workout_session_path(workout.id)
 
 #feed-link = paginate workouts, :remote => true
