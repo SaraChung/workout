@@ -29,9 +29,12 @@ section
         td colspan="3" = @workout.is_private
       tr
         td Status
-        td colspan="3" 
-          .button-group
-            button.workout-status data-workstat="true" class=('active' if @workout.status == 'Accepted')
-              | Accepted
-            button.workout-status data-workstat="false" class=('active' if @workout.status == 'Declined')
-              | Declined
+        td colspan="3"
+          - unless @workout.from_when < Time.now
+            .button-group
+              button.workout-status data-workstat="true" class=('active' if @workout.status == 'Accepted')
+                | Accepted
+              button.workout-status data-workstat="false" class=('active' if @workout.status == 'Declined')
+                | Declined
+          - else
+            = @workout.status
