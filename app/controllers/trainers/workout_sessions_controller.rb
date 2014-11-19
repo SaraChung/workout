@@ -1,5 +1,5 @@
 class Trainers::WorkoutSessionsController < TrainersController
-  before_filter :find_workout, only:[:show, :update_status, :delete]
+  before_filter :find_workout, only:[:show, :update_status, :destroy]
   before_filter :workouts, only:[:index]
 
   def index
@@ -8,6 +8,10 @@ class Trainers::WorkoutSessionsController < TrainersController
 
   def show
     
+  end
+
+  def destroy
+    WorkoutRemovalWorker.perform_async(current_trainer.id, "Trainer", @workout.user.id, "User", @workout.id)
   end
 
   def update_status
