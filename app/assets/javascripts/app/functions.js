@@ -57,4 +57,13 @@ var view_notification = function(){
 
 var renewNotifCount = function(count) {
   return $('#notifications-counter').text(count);
-};
+}
+
+var renewWorkoutStatus = function(){
+  $("button.workout-status.active").prop('disabled', true);
+  $("button.workout-status").click(function(){
+    $.post("/trainers/workout_sessions/"+$("#workout_id").val()+"/update_status", { status: $(this).data("workstat") });
+        $("button.workout-status").removeClass("active").prop('disabled', false);
+        $(this).addClass("active").prop('disabled', true);
+  });
+}

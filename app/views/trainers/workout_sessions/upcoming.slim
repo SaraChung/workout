@@ -1,0 +1,7 @@
+.title-content
+  .line-behind-text
+    h4.center-header Upcoming Workout Sessions
+  fieldset
+  hr
+  .table
+    = render partial: "list", locals: { workouts: @workouts.upcoming_workouts.page(params[:page]) }

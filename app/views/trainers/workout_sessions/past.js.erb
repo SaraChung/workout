@@ -1,0 +1,2 @@
+$('.table').html("<%=j render partial: 'list', locals: { workouts: @workouts.past_workouts.page(params[:page]) } %>");
+$('#feed-link').html('<%= escape_javascript(paginate(@workouts.past_workouts.page(params[:page]), :remote => true).to_s) %>');

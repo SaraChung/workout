@@ -1,0 +1,18 @@
+.title-content
+  .line-behind-text
+    h4.center-header Your Workout Sessions
+  .content-field
+    section
+      .table
+        = render "stats"
+    section
+      section.half-left
+        .line-behind-text
+          h5.center-header Latest 10 Requests
+        .table
+          = render partial: "mini_list", locals: { workouts: @workouts.upcoming_workouts.declined.limit(10) }
+      section.half-right
+        .line-behind-text
+          h5.center-header 10 Upcoming Workouts
+        .table
+          = render partial: "mini_list", locals: { workouts: @workouts.upcoming_workouts.accepted.limit(10) }
