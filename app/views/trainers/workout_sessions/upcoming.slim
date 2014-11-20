@@ -4,4 +4,4 @@
   fieldset
   hr
   .table
-    = render partial: "list", locals: { workouts: @workouts.upcoming_workouts.page(params[:page]) }
+    = render partial: "list", locals: { workouts: @workouts.upcoming_workouts.accepted.page(params[:page]) }
