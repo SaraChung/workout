@@ -42,3 +42,7 @@ end
 Then(/^I click "(.*?)" button$/) do |button|
   click_button button
 end
+
+Then(/^I should not see "(.*?)"$/) do |content|
+  page.should_not have_content content
+end
