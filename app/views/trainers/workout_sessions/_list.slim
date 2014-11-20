@@ -8,15 +8,19 @@ table
       th Status
       th
   tbody
-  - workouts.each_with_index do |workout, index|
-    tr id="workout_#{index}"
-      td = workout.user.full_name
-      td = "#{workout.from_when.to_formatted_s(:long)} - #{workout.to_when.to_formatted_s(:time)}"
-      td = workout.exercise.name
-      td = workout.is_private
-      td = workout.status
-      td 
-        = link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, trainers_workout_session_path(id: workout.id, index: index), method: :delete, data: { confirm: "Are you sure to remove this session?", remote: true }
-        = link_to '<i class="fa fa-eye fa-lg"></i>'.html_safe, trainers_workout_session_path(workout.id)
+  - if workouts.length > 0 
+    - workouts.each_with_index do |workout, index|
+      tr id="workout_#{index}"
+        td = workout.user.full_name
+        td = "#{workout.from_when.to_formatted_s(:long)} - #{workout.to_when.to_formatted_s(:time)}"
+        td = workout.exercise.name
+        td = workout.is_private
+        td = workout.status
+        td 
+          = link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, trainers_workout_session_path(id: workout.id, index: index), method: :delete, data: { confirm: "Are you sure to remove this session?", remote: true, workout: workout.id }
+          = link_to '<i class="fa fa-eye fa-lg"></i>'.html_safe, trainers_workout_session_path(workout.id)
+  - else
+    tr 
+      td colspan="6" You do not have any workouts
 
 #feed-link = paginate workouts, :remote => true
