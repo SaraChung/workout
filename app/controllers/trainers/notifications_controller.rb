@@ -1,13 +1,17 @@
 class Trainers::NotificationsController < TrainersController
   respond_to :html, :js, only: [:show, :latest_feeds]
   before_filter :load_feeds, only: [:index, :latest_feeds]
+  before_filter :feed, only: [:show, :destroy]
   
   def index
   end
 
   def show
-    @notification = Notification.find(params[:notif_id])
     @notification.update_attributes(is_read: "true")
+  end
+
+  def destroy
+    @notification.destroy
   end
 
   def latest_feeds
@@ -18,6 +22,10 @@ class Trainers::NotificationsController < TrainersController
 
   def load_feeds
     @notifications ||= Notification.trainer_feeds(current_trainer.id).page params[:page]
+  end
+
+  def feed
+    @notification ||= Notification.find(params[:id])
   end
 
 end
