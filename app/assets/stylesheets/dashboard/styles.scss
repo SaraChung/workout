@@ -61,11 +61,17 @@ h1, h2, h3, h4, h5, h6{
 }
 
 // Feeds
-.feed{
+.feed-box{
   border-bottom: 2px solid #BEBEBE;
-  @include padding(1.5em 1.5em 1.5em 1.5em);
   color: #808080;
+  width: 100%;
+  position: relative;
+}
+
+.feed{
   cursor: pointer;
+  @include padding(1.5em 1.5em 1.5em 1.5em);
+  width: 80%;
 }
 
 #feed-caption{
@@ -132,4 +138,12 @@ table{
 
 .fa{
   margin: 5px;
+}
+
+.feed-remove{
+  color: #808080;
+  @include padding(1.5em 1.5em 1.5em 1.5em);
+  bottom: 8%;
+  position: absolute;
+  left: 90%;
 }
