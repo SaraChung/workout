@@ -49,7 +49,7 @@ var registered_user_booking = function(){
 
 var view_notification = function(){
     $(".feed").click(function(){
-        $.get("/trainers/notifications/show", { id: $(this).data("feed") });
+        $.get("/trainers/notifications/"+$(this).data("feed"));
         $(".modal-state").prop('checked', true);
         $(".feed-box[data-feed="+$(this).data("feed")+"]").removeClass("unread").addClass("read");
     });
