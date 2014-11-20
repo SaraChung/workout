@@ -46,3 +46,15 @@ end
 Then(/^I should not see "(.*?)"$/) do |content|
   expect(page).to_not have_content content
 end
+
+When(/^I hover "(.*?)" link$/) do |link|
+  find('a', text: link).hover
+end
+
+Then(/^I should see following table:$/) do |table|
+  data = table.raw
+end
+
+When(/^I view "(.*?)" with id "(.*?)"$/) do |attr, id|
+  find(:css, "a[data-#{attr}='#{id.to_s}']").click
+end
