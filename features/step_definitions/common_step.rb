@@ -14,7 +14,7 @@ Then(/^I go to sign in as a trainer uses "(.*?)" email$/) do |email|
 end
 
 Then(/^I should see "(.*?)"$/) do |content|
-  page.should have_content("#{content}")
+  expect(page).to have_content("#{content}")
 end
 
 Then(/^I click "(.*?)" link$/) do |content|
@@ -44,5 +44,5 @@ Then(/^I click "(.*?)" button$/) do |button|
 end
 
 Then(/^I should not see "(.*?)"$/) do |content|
-  page.should_not have_content content
+  expect(page).to_not have_content content
 end
