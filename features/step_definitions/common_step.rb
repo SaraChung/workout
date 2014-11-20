@@ -44,7 +44,7 @@ Then(/^I click "(.*?)" button$/) do |button|
 end
 
 Then(/^I should not see "(.*?)"$/) do |content|
-  expect(page).to_not have_content content
+  expect(page).to_not have_content(content)
 end
 
 When(/^I hover "(.*?)" link$/) do |link|
@@ -57,4 +57,9 @@ end
 
 When(/^I view "(.*?)" with id "(.*?)"$/) do |attr, id|
   find(:css, "a[data-#{attr}='#{id.to_s}']").click
+end
+
+When(/^I remove "(.*?)" with id "(.*?)"$/) do |attr, id|
+  find(:css, "a[data-#{attr}='#{id.to_s}'][data-method='delete']").click
+  page.driver.browser.switch_to.alert.accept
 end
