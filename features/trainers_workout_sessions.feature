@@ -26,9 +26,8 @@ Feature: Workout Sessions
     Then I should see following table:
       | Full Name | When | Exercise | Is Private? | Status |
 
-  @coba
   @javascript
-  Scenario: View a workout sessions
+  Scenario: View a workout session
     When I visit let's workout web application
     And I go to sign in as a trainer uses "elissa@trainer.com" email
     And I click "Workouts" link
@@ -43,3 +42,12 @@ Feature: Workout Sessions
     And I should see "Location"
     And I should see "Private?"
     And I should see "Status"
+
+  @javascript
+  Scenario: Remove a workout session
+    When I visit let's workout web application
+    And I go to sign in as a trainer uses "elissa@trainer.com" email
+    And I hover "Workouts" link
+    And I click "Upcoming Workouts" link
+    And I remove "workout" with id "1"
+    Then I should not see "December 28, 2014 13:00 - 13:45"
