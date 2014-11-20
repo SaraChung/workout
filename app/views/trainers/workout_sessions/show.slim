@@ -1,6 +1,6 @@
 section
   h1 Workout Session Details
-  table
+  table.table
     tbody
     - unless @workout.nil?
       tr
@@ -17,9 +17,9 @@ section
         td colspan="3" = @workout.exercise.name
       tr
         td From 
-        td = @workout.from_when
+        td = @workout.from_when.to_formatted_s(:long)
         td To
-        td = @workout.to_when
+        td = @workout.to_when.to_formatted_s(:time)
       tr
         td Location
         td colspan="3" = @workout.user.address
