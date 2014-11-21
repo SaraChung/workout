@@ -1,0 +1,6 @@
+<div class="modal-inner">
+  <label class="modal-close" for="modal-1"></label>
+  <h1><%= notif.title %></h1>
+  <p class="intro"><%= link_to notif.long_message.gsub(/\[(.*?)\]/, User.who_is(get_inside_bracket(notif.short_message)).join(" ")), notif.url %></p>
+  <p class="body"></p>
+</div>
