@@ -4,6 +4,8 @@
       | First Time Use
     a.js-vertical-tab#registered_link.vertical-tab[href="#" rel="tab2"]
       | Already Registered?
+    a.js-vertical-tab#registered_link.vertical-tab[href="#" rel="tab3"]
+      | To Dashboard
 
   .vertical-tab-content-container
     a.js-vertical-tab-accordion-heading.vertical-tab-accordion-heading.is-active[href="" rel="tab1"]
@@ -15,6 +17,11 @@
       | Already Registered?
     #tab2.js-vertical-tab-content.vertical-tab-content
       = render "already_registered"
+
+    a.js-vertical-tab-accordion-heading.vertical-tab-accordion-heading[href="" rel="tab3"]
+      | To Dashboard
+    #tab3.js-vertical-tab-content.vertical-tab-content
+      = render "to_dashboard"
 
 .trainer-list
 .booking-fieldset
