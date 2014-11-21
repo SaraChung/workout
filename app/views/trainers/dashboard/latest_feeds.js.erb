@@ -1,5 +1,5 @@
 <% unless @notifications.nil? %>
-  $(".feeds").html("<%=j render partial: 'feeds' %>");
+  $(".feeds").html("<%=j render partial: 'trainers/notifications/feeds' %>");
 <% end %>
 
 $(document).ready(function() {
