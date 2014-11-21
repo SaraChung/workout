@@ -23,6 +23,8 @@ class Trainer < ActiveRecord::Base
   scope :closest_trainer, -> (user_address) { near(user_address, 10, units: :km) }
   scope :available, -> (id, start_date, end_date, trainer_assistant, address) { where("id IN ((SELECT trainers.id FROM trainers LEFT OUTER JOIN exercises_trainers ON exercises_trainers.trainer_id = trainers.id LEFT OUTER JOIN exercises ON exercises.id = exercises_trainers.exercise_id LEFT OUTER JOIN sessions ON sessions.trainer_id = trainers.id WHERE (exercises.id = ?) AND trainers.id NOT IN (SELECT trainers.id FROM trainers LEFT OUTER JOIN sessions ON sessions.trainer_id = trainers.id WHERE (sessions.from_when >= ? AND sessions.to_when <= ?) AND sessions.status = 'true'))) AND trainers.is_trainer = ?", id, start_date, end_date, trainer_assistant).near(address) }
   scope :who_is, -> (id) { where("id = ?", id).pluck(:first_name, :last_name).flatten }
+  scope :where_is, -> (email) { where("email = ?", email).pluck(:address)[0] }
+  scope :who_has_email, -> (email) { where("email = ?", email).pluck(:first_name, :last_name).flatten }
 
   def load_trainer_skills
     self.exercises.pluck(:id)
