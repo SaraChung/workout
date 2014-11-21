@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  resources :home, only: [:index] do
+    collection do
+      post "login"
+    end
+  end
   
   namespace :trainers do
     resources :skills, only: [:new, :create]
@@ -38,7 +44,16 @@ Rails.application.routes.draw do
         get "find_trainer"
       end
     end
-    resources :dashboard
+    resources :notifications do
+      collection do
+        get "latest_feeds"
+      end
+    end
+    resources :dashboard, only: [:index] do
+      collection do
+        get "latest_feeds"
+      end
+    end
     resources :workout_sessions
   end
   # Example of regular route:
