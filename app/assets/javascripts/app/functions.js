@@ -56,6 +56,15 @@ var view_notification = function(){
     });
 }
 
+var view_notification_users = function(){
+    $(".feed").click(function(){
+        $(".modal-window").html("");
+        $.get("/users/notifications/"+$(this).data("feed"));
+        $(".modal-state").prop('checked', true);
+        $(".feed-box[data-feed="+$(this).data("feed")+"]").removeClass("unread").addClass("read");
+    });
+}
+
 var renewNotifCount = function(count) {
   return $('#notifications-counter').text(count);
 }
