@@ -1,3 +1,11 @@
-= notice
-| This is Dashboard
-= current_user.first_name
+.title-content
+  .line-behind-text
+    h4.center-header Latest Feeds
+  .content-field
+    .feeds
+      = render "users/notifications/feeds"
+
+.modal
+  label[for="modal-1"]
+  input#modal-1.modal-state[type="checkbox"]
+  .modal-window
