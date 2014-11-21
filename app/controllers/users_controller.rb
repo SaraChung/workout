@@ -1,3 +1,21 @@
 class UsersController < ApplicationController 
-  layout 'dashboard'
+  before_filter :authenticate_user!
+  before_filter :init_variables
+  before_filter :init
+  layout :xhr_request?
+  
+  private
+
+  def xhr_request?
+    request.xhr? ? false : 'dashboard'
+  end
+
+  def init_variables
+    # @trainer ||= current_trainer.decorate
+    @count_unread ||= Notification.count_unread_user(current_user.id)
+  end
+
+  def init
+    gon.watch.count_unread = @count_unread
+  end
 end
