@@ -24,6 +24,9 @@ gem 'draper', '~> 1.3'
 #Pagination
 gem 'kaminari'
 
+#paperclip attachment
+gem "paperclip", "~> 4.2"
+
 # Use SCSS for stylesheets
 gem 'sass'
 # Use Uglifier as compressor for JavaScript assets
@@ -55,6 +58,7 @@ group :test do
 end	
 
 group :development do
+  gem 'traceroute'
   gem 'sidekiq-benchmark'
 	gem 'meta_request'
 	gem "better_errors"
