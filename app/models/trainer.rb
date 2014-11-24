@@ -11,12 +11,14 @@ class Trainer < ActiveRecord::Base
   has_many :sessions
   has_many :users, through: :sessions
 
+  has_one :profiles_trainer, dependent: :destroy
+    
   after_validation :geocode
   validates :email, uniqueness: true, presence: true  
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, presence: true
-  
+
   scope :relations, -> { eager_load(:exercises, :sessions) }
   scope :skill, -> (id) { relations.where("exercises.id = ?", id) }
   scope :has_session, -> (start_date, end_date) { relations.where("sessions.from_when >= ? AND sessions.to_when <= ?",start_date, end_date) }
