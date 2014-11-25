@@ -1,0 +1,20 @@
+table
+  thead
+    tr
+      th Full Name
+      th When
+      th Exercise
+      th Is Private?
+      th 
+  tbody
+  - if workouts.length > 0 
+    - workouts.each do |workout|
+      tr
+        td = workout.trainer.full_name
+        td = "#{workout.from_when.to_formatted_s(:long)} - #{workout.to_when.to_formatted_s(:time)}"
+        td = workout.exercise.name
+        td = workout.is_private
+        td = link_to '<i class="fa fa-eye fa-lg"></i>'.html_safe, users_workout_session_path(workout.id), data: { workout: workout.id }
+  - else
+    tr 
+      td colspan="5" You do not have any workouts

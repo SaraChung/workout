@@ -1,0 +1,6 @@
+$('.feeds').html("<%=j render partial: 'feeds' %>");
+$('#feed-link').html('<%= escape_javascript(paginate(@notifications, :remote => true).to_s) %>');
+
+$(document).ready(function() {
+  view_notification_users();
+});

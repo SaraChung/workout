@@ -49,9 +49,19 @@ var registered_user_booking = function(){
 
 var view_notification = function(){
     $(".feed").click(function(){
-        $.get("/trainers/notifications/show", { notif_id: $(this).data("feed") });
+        $(".modal-window").html("");
+        $.get("/trainers/notifications/"+$(this).data("feed"));
         $(".modal-state").prop('checked', true);
-        $(this).removeClass("unread").addClass("read");
+        $(".feed-box[data-feed="+$(this).data("feed")+"]").removeClass("unread").addClass("read");
+    });
+}
+
+var view_notification_users = function(){
+    $(".feed").click(function(){
+        $(".modal-window").html("");
+        $.get("/users/notifications/"+$(this).data("feed"));
+        $(".modal-state").prop('checked', true);
+        $(".feed-box[data-feed="+$(this).data("feed")+"]").removeClass("unread").addClass("read");
     });
 }
 

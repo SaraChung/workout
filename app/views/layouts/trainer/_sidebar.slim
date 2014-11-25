@@ -1,0 +1,15 @@
+#sidebar
+  #profile-name
+    h5 = @trainer.full_name
+  = image_tag @trainer.profiles_trainer.image.url(:medium), id: "profile-picture"
+  #profile-address
+    i.fa.fa-map-marker.fa-lg 
+    | Toronto, Canada 
+  #profile-rating
+    | 5
+    i.fa.fa-star.fa-lg
+    | based on ... reviews.
+  #profile-setting
+    = link_to "<i class='fa fa-pencil-square-o'></i>".html_safe, edit_trainers_profile_path(@trainer.id)
+    ' | 
+    = link_to "View Profile", trainers_profile_path(@trainer.id)

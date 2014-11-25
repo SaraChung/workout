@@ -1,0 +1,12 @@
+<% unless @notifications.nil? 
+  @notifications.each do |notif| %>
+    <div class="feed-box <%= notif.is_read? ? 'read' : 'unread' %>" data-feed="<%= notif.id %>">
+      <div class="feed" data-feed="<%= notif.id %>">
+        <%= notif.short_message.gsub(/\[(.*?)\]/, Trainer.who_has_email(get_inside_bracket(notif.short_message)).join(" ")) %>
+        <div id="feed-caption">on <%= notif.created_at.to_formatted_s(:long) %></div>
+      </div>
+      <div><%= link_to '<i class="fa fa-times"></i>'.html_safe, users_notification_path(notif.id),  class: "feed-remove", data: { feed: notif.id }, remote: true, method: :delete %></div>
+    </div>
+  <% end %>
+  <div id="feed-link"><%= params[:controller] == "users/dashboard" ? (link_to "Show all notifications", users_notifications_path, class: "center-link") : (paginate @notifications, :remote => true ) %></div>
+<% end %>

@@ -5,13 +5,17 @@ header.navigation.fixed
     .nav
       ul#navigation-menu
         li.nav-link.menu-title
-          = link_to "#{its(current_user.first_name)} Dashboard", "#"
+          = link_to "#{its(current_user.first_name)} Dashboard", users_dashboard_index_path
         li.nav-link.more 
-          = link_to "Workouts", root_path
-
+          = link_to "Workouts", users_workout_sessions_path
           ul.submenu
-            li = link_to "Past Workouts", root_path 
-            li = link_to "Upcoming Workouts", root_path 
+            li = link_to "Past Workouts", users_workout_sessions_path(time: "past")
+            li = link_to "Upcoming Workouts", users_workout_sessions_path(time: "upcoming") 
+            li = link_to "Workout Requests", users_workout_sessions_path(time: "request") 
 
     .navigation-tools
+      ul#navigation-menu
+        li.nav-link.badges 
+          = link_to "Notifications ", users_notifications_path
+          span.badge#notifications-counter = @count_unread
       = link_to "Logout", destroy_user_session_path, :method => 'delete', class: "button" if user_signed_in?

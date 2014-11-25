@@ -1,0 +1,7 @@
+<% unless @notifications.nil? %>
+  $(".feeds").html("<%=j render partial: 'users/notifications/feeds' %>");
+<% end %>
+
+$(document).ready(function() {
+  view_notification_users();
+});

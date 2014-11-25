@@ -1,0 +1,13 @@
+h5 Login to Your Dashboard
+= form_tag(login_home_index_path, id: "user_login_form")
+  hr
+  .input-control
+    = label_tag "email", "Email", class: "form-label"
+    = text_field_tag "email", "", placeholder: "Your email here"
+  .input-control
+    = label_tag "phone_number", "Phone Number", class: "form-label"
+    = text_field_tag "phone_number", "", placeholder: "Your phone number here"
+  .input-control
+    = label_tag "", "", class: "form-label"
+    = submit_tag "Login", class: "blue-button"
+  hr

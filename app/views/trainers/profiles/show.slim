@@ -1,0 +1,34 @@
+.title-content
+  .line-behind-text
+    h4.center-header My Profile
+  table.table
+    tr
+      td Full Name
+      td colspan="2" = @trainer.full_name
+    tr
+      td Gender
+      td colspan="2" = @trainer.gender
+    tr
+      td Birthdate
+      td colspan="2" = @trainer.profiles_trainer.birthdate.strftime('%A, %d %B %Y') 
+    tr
+      td Email
+      td colspan="2" = @trainer.email
+    tr
+      td Phone Number
+      td colspan="2" = @trainer.phone_number
+    tr
+      td Location
+      td colspan="2" = @trainer.address
+    tr
+      td Role
+      td colspan="2" = @trainer.is_trainer
+    tr
+      td Interests
+      td colspan="2" = @trainer.profiles_trainer.interests
+    tr
+      td Workout Quotes
+      td colspan="2" = @trainer.profiles_trainer.workout_quotes.html_safe
+    tr
+      td About Me
+      td colspan="2" = @trainer.profiles_trainer.about

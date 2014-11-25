@@ -14,7 +14,7 @@ Then(/^I go to sign in as a trainer uses "(.*?)" email$/) do |email|
 end
 
 Then(/^I should see "(.*?)"$/) do |content|
-  page.should have_content("#{content}")
+  expect(page).to have_content("#{content}")
 end
 
 Then(/^I click "(.*?)" link$/) do |content|
@@ -41,4 +41,25 @@ end
 
 Then(/^I click "(.*?)" button$/) do |button|
   click_button button
+end
+
+Then(/^I should not see "(.*?)"$/) do |content|
+  expect(page).to_not have_content(content)
+end
+
+When(/^I hover "(.*?)" link$/) do |link|
+  find('a', text: link).hover
+end
+
+Then(/^I should see following table:$/) do |table|
+  data = table.raw
+end
+
+When(/^I view "(.*?)" with id "(.*?)"$/) do |attr, id|
+  find(:css, "a[data-#{attr}='#{id.to_s}']").click
+end
+
+When(/^I remove "(.*?)" with id "(.*?)"$/) do |attr, id|
+  find(:css, "a[data-#{attr}='#{id.to_s}'][data-method='delete']").click
+  page.driver.browser.switch_to.alert.accept
 end

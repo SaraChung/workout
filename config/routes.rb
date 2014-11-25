@@ -7,20 +7,27 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+
+  resources :home, only: [:index] do
+    collection do
+      post "login"
+    end
+  end
   
   namespace :trainers do
     resources :skills, only: [:new, :create]
+    resources :profiles, only: [:edit, :update, :show]
     resources :dashboard, only: [:index] do
       collection do
         get "latest_feeds"
       end
     end
-    resources :notifications do
+    resources :notifications, only: [:index, :show, :destroy] do
       collection do
         get "latest_feeds"
       end
     end
-    resources :workout_sessions do
+    resources :workout_sessions, only: [:index, :show, :destroy] do
       member do
         post "update_status"
       end
@@ -28,18 +35,27 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
-    resources :books do
+    resources :books, only: [:create] do
       collection do
         get "find_trainer"
       end
     end
-    resources :registered_books do
+    resources :registered_books, only: [:create] do
       collection do
         get "find_trainer"
       end
     end
-    resources :dashboard
-    resources :workout_sessions
+    resources :notifications, only: [:index, :show, :destroy] do
+      collection do
+        get "latest_feeds"
+      end
+    end
+    resources :dashboard, only: [:index] do
+      collection do
+        get "latest_feeds"
+      end
+    end
+    resources :workout_sessions, only: [:index, :show, :destroy]
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

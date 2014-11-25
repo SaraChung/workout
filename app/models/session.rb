@@ -5,6 +5,7 @@ class Session < ActiveRecord::Base
 
   default_scope { eager_load(:user, :trainer, :exercise) }
   scope :whose, -> (trainer_id) { where trainer_id: trainer_id }
+  scope :whose_user, -> (user_id) { where user_id: user_id }
   scope :accepted, -> { where status: true }
   scope :declined, -> { where status: false }
   scope :past_workouts, -> { where("to_when < ?", Time.now) }

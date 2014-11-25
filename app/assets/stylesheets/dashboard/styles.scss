@@ -8,6 +8,10 @@ body{
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+input{
+  width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6{
   color: #4699d7;
 }
@@ -55,17 +59,23 @@ h1, h2, h3, h4, h5, h6{
 
 .main-content{
   margin-left: 282px;
-  padding: 2.5%;
+  padding: 1.5%;
   top: 60px;
   position: relative;
 }
 
 // Feeds
-.feed{
+.feed-box{
   border-bottom: 2px solid #BEBEBE;
-  @include padding(1.5em 1.5em 1.5em 1.5em);
   color: #808080;
+  width: 100%;
+  position: relative;
+}
+
+.feed{
   cursor: pointer;
+  @include padding(1.5em 1.5em 1.5em 1.5em);
+  width: 80%;
 }
 
 #feed-caption{
@@ -132,4 +142,45 @@ table{
 
 .fa{
   margin: 5px;
+}
+
+.feed-remove{
+  color: #808080;
+  @include padding(1.5em 1.5em 1.5em 1.5em);
+  bottom: 8%;
+  position: absolute;
+  left: 90%;
+}
+
+//Sidebar
+#sidebar{
+  color: #60A9E1 !important;
+}
+#profile-name{
+  text-align: center;
+  @include padding(1.5em 1.5em 0em 1.5em);
+}
+#profile-picture{
+  border-radius: 100%;
+  @include padding(1em 4em 1em 4em);
+  opacity: 0.8;
+  text-align: center;
+  @include transition-duration(1.5s);
+  &:hover{
+    opacity: 1;
+    @include transition-duration(1.5s);
+  }
+}
+#profile-address{
+  font-size: small;
+  text-align: center;
+  padding: 0.5em;
+}
+#profile-rating{
+  text-align: center;
+}
+#profile-setting{
+  text-align: center;
+  padding: 0.5em;
+  background: rgb(231, 237, 242);
 }
