@@ -11,8 +11,8 @@ class UsersController < ApplicationController
   end
 
   def init_variables
-    # @trainer ||= current_trainer.decorate
-    @count_unread ||= Notification.count_unread_user(current_user.id)
+    @user ||= current_user
+    @count_unread ||= Notification.count_unread_user(@user.id)
   end
 
   def init
