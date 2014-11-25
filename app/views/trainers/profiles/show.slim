@@ -28,7 +28,7 @@
       td colspan="2" = @trainer.profiles_trainer.interests
     tr
       td Workout Quotes
-      td colspan="2" = @trainer.profiles_trainer.workout_quotes.html_safe
+      td colspan="2" = simple_format @trainer.profiles_trainer.workout_quotes unless @trainer.profiles_trainer.workout_quotes.nil?
     tr
       td About Me
-      td colspan="2" = @trainer.profiles_trainer.about
+      td colspan="2" = simple_format @trainer.profiles_trainer.about unless @trainer.profiles_trainer.about.nil?

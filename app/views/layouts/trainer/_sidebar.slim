@@ -1,7 +1,7 @@
 #sidebar
   #profile-name
     h5 = @trainer.full_name
-  = image_tag @trainer.profiles_trainer.image.url(:medium), id: "profile-picture"
+  = image_tag (@trainer.profiles_trainer.nil? ? "/default-image.png" : @trainer.profiles_trainer.image.url(:medium)), id: "profile-picture"
   #profile-address
     i.fa.fa-map-marker.fa-lg 
     | Toronto, Canada 
