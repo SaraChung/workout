@@ -9,6 +9,9 @@
       td Gender
       td colspan="2" = @trainer.gender
     tr
+      td Birthdate
+      td colspan="2" = @trainer.profiles_trainer.birthdate.strftime('%A, %d %B %Y') 
+    tr
       td Email
       td colspan="2" = @trainer.email
     tr
