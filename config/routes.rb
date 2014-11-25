@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
+    resources :profiles, only: [:edit, :update, :show]
     resources :books, only: [:create] do
       collection do
         get "find_trainer"

@@ -1,0 +1,27 @@
+.title-content
+  .line-behind-text
+    h4.center-header Edit your Profile
+= form_for @profile, url: users_profile_path, method: :put, :html => { :multipart => true }, remote: true do |f|
+  table.table
+    tr
+      td = f.label :image, "Profile Picture"
+      td colspan="2" = f.file_field :image
+      td
+    tr
+      td = f.label :birthdate
+      td colspan="2" = select_date(@profile.birthdate, start_year: Time.now.year - 80, end_year: Time.now.year - 17, prefix: "dob")
+      td
+    tr
+      td = f.label :interests
+      td colspan="2" = f.text_field :interests
+      td
+    tr 
+      td = f.label :about 
+      td colspan="3" = f.text_area :about, rows: 10, cols: 80
+    tr 
+      td = f.label :quotes
+      td colspan="3" = f.text_area :quotes, rows: 5, cols: 80
+    tr
+      td
+      td = f.submit "Update Profile"
+      td colspan="2"

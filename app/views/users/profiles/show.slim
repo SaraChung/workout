@@ -1,0 +1,31 @@
+.title-content
+  .line-behind-text
+    h4.center-header My Profile
+  table.table
+    tr
+      td Full Name
+      td colspan="2" = @user.full_name
+    tr
+      td Gender
+      td colspan="2" = @user.gender
+    tr
+      td Birthdate
+      td colspan="2" = @user.profiles_user.birthdate.strftime('%A, %d %B %Y') unless @user.profiles_user.birthdate.nil?
+    tr
+      td Email
+      td colspan="2" = @user.email
+    tr
+      td Phone Number
+      td colspan="2" = @user.phone_number
+    tr
+      td Location
+      td colspan="2" = @user.address
+    tr
+      td Interests
+      td colspan="2" = @user.profiles_user.interests
+    tr
+      td Quotes
+      td colspan="2" = simple_format @user.profiles_user.quotes unless @user.profiles_user.quotes.nil?
+    tr
+      td About Me
+      td colspan="2" = simple_format @user.profiles_user.about unless @user.profiles_user.about.nil?
