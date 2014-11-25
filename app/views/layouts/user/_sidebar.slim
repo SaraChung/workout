@@ -1,0 +1,11 @@
+#sidebar
+  #profile-name
+    h5 = @user.full_name
+  = image_tag (@user.profiles_user.nil? ? "/default-image.png" : @user.profiles_user.image.url(:medium)), id: "profile-picture"
+  #profile-address
+    i.fa.fa-map-marker.fa-lg 
+    | Toronto, Canada 
+  #profile-setting
+    = link_to "<i class='fa fa-pencil-square-o'></i>".html_safe, edit_users_profile_path(@user.id)
+    ' | 
+    = link_to "View Profile", users_profile_path(@user.id)

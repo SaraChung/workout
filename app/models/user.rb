@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
   has_many :sessions
   has_many :trainers, through: :sessions
+
+  has_one :profiles_user, dependent: :destroy
   
   scope :where_is, -> (email) { where("email = ?", email).pluck(:address)[0] }
   scope :who_is, -> (email) { where("email = ?", email).pluck(:first_name, :last_name).flatten }
