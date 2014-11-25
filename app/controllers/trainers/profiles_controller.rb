@@ -1,5 +1,5 @@
 class Trainers::ProfilesController < TrainersController
-  respond_to :js, only: [:update]
+  # respond_to :js, only: [:update]
   before_action :profile
   
   def show
@@ -20,6 +20,7 @@ class Trainers::ProfilesController < TrainersController
   end
 
   def profile_params
+    params[:profiles_trainer][:birthdate] = Date.strptime([params[:dob][:year].to_i,params[:dob][:month].to_i,params[:dob][:day]].join("-"), '%Y-%m-%d')
     params.require(:profiles_trainer).permit(:interests, :about, :workout_quotes, :birthdate, :image)
   end
 
