@@ -66,14 +66,31 @@ var view_notification_users = function(){
 }
 
 var renewNotifCount = function(count) {
-  return $('#notifications-counter').text(count);
+    return $('#notifications-counter').text(count);
 }
 
 var renewWorkoutStatus = function(){
-  $("button.workout-status.active").prop('disabled', true);
-  $("button.workout-status").click(function(){
-    $.post("/trainers/workout_sessions/"+$("#workout_id").val()+"/update_status", { status: $(this).data("workstat") });
+    $("button.workout-status.active").prop('disabled', true);
+    $("button.workout-status").click(function(){
+        $.post("/trainers/workout_sessions/"+$("#workout_id").val()+"/update_status", { status: $(this).data("workstat") });
         $("button.workout-status").removeClass("active").prop('disabled', false);
         $(this).addClass("active").prop('disabled', true);
-  });
+    });
+}
+
+var view_review_modal = function(){
+    $(".trainer-reviewable").click(function(){
+        $(".modal-window").html("");
+        $.get("/users/reviews/new/", { trainer_id: $(this).data("trainer")});
+        $(".modal-state").prop('checked', true);
+    });
+}
+
+var give_reviews = function(){
+    $(".review-star").click(function(){
+        $(".review-star").removeClass("fa-star").addClass("fa-star-o");
+        star = $(this).data("review");
+        $(".review-star:lt("+star+")").removeClass("fa-star-o").addClass("fa-star");
+        $("#review_rating").val(star);
+    });
 }
