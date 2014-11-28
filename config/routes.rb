@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
+    resources :reviews, only: [:index, :new, :create]
     resources :profiles, only: [:edit, :update, :show]
     resources :books, only: [:create] do
       collection do
