@@ -1,5 +1,3 @@
 <% if @review.persisted? %>
-  alert("Review was sent!");
-  $(".modal-state").prop('checked', false);
-  $(".trainer-reviewable[data-trainer=<%= @review.trainer_id %>]").remove();
+  $(".flash").html('<div class="flash-success"><span>Reviews has been sent!</span></div>');
 <% end %>
