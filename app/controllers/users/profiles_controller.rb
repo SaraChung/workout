@@ -1,5 +1,4 @@
 class Users::ProfilesController < UsersController
-  # respond_to :js, only: [:update]
   before_action :profile
   
   def show
