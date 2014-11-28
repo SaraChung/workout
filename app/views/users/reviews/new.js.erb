@@ -4,5 +4,6 @@
 <% end %>
 
 $(document).ready(function() {
+  $(".review-star:lt(<%= @review.rating %>)").removeClass("fa-star-o").addClass("fa-star");
   give_reviews();
 });
