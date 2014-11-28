@@ -184,3 +184,27 @@ table{
   padding: 0.5em;
   background: rgb(231, 237, 242);
 }
+// Trainers Reviews
+.trainer-reviewable{
+  display: inline-block;
+  padding: 1.5em;
+  margin: 1em;
+  background: #4699D7;
+  color: white;
+  text-align: center;
+  font-family: bebas_neueregular;
+  width: 12em;
+  float: left;
+  cursor: pointer;
+}
+.trainer-reviewable img{
+  border-radius: 100%;
+  display: block;
+  @include image-rendering(optimizeSpeed);
+  margin: auto;
+  padding: 0.3em;
+}
+.review-star{
+  cursor: pointer;
+  color: #ec9946;
+}
