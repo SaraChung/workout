@@ -1,0 +1,8 @@
+<% unless @review.nil? %>
+  $(".modal-window").html("<%=j render partial: 'users/reviews/modal', locals: { review: @review } %>");  
+  $(".modal-state").prop('checked', true);
+<% end %>
+
+$(document).ready(function() {
+  give_reviews();
+});
