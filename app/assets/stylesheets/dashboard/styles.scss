@@ -197,7 +197,7 @@ table{
   float: left;
   cursor: pointer;
 }
-.trainer-reviewable img{
+.trainer-reviewable, .left-box img{
   border-radius: 100%;
   display: block;
   @include image-rendering(optimizeSpeed);
@@ -207,4 +207,17 @@ table{
 .review-star{
   cursor: pointer;
   color: #ec9946;
+}
+.left-box{
+  width: 8.5em;
+  border-right: 1px solid #dddddd;
+  color: #4699D7;
+  text-align: center;
+}
+.right-box{
+  text-align: left;
+}
+.comment-review{
+  color: #8b8b8b;
+  font-size: 1em;
 }
