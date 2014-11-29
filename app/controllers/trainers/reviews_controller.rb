@@ -7,6 +7,6 @@ class Trainers::ReviewsController < TrainersController
   private
 
   def reviews
-    @reviews ||= Review.where(trainer_id: @trainer.id).page params[:page]
+    @reviews ||= Review.where(trainer_id: @trainer.id).order("created_at DESC").page params[:page]
   end
 end
