@@ -1,5 +1,4 @@
 class Trainers::ProfilesController < TrainersController
-  # respond_to :js, only: [:update]
   before_action :profile
   
   def show
