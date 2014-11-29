@@ -94,3 +94,10 @@ var give_reviews = function(){
         $("#review_rating").val(star);
     });
 }
+
+var load_each_stars = function(){
+    $(".rating-review").each(function(){
+        star = $(this).data("rating");
+        $(this).find(".review-star:lt("+star+")").removeClass("fa-star-o").addClass("fa-star");
+    });
+}
