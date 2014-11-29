@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   
   namespace :trainers do
     resources :skills, only: [:new, :create]
+    resources :reviews, only: [:index]
     resources :profiles, only: [:edit, :update, :show]
     resources :dashboard, only: [:index] do
       collection do
