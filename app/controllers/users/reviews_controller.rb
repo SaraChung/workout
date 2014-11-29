@@ -10,6 +10,7 @@ class Users::ReviewsController < UsersController
   
   def create
     review
+    send_notif
     @review.update_attributes(review_params)
     @review.save 
   end
@@ -26,6 +27,11 @@ class Users::ReviewsController < UsersController
 
   def review_params
     params.require(:review).permit(:comments, :rating)
+  end
+
+  def send_notif
+    type = @review.persisted? ? "Create" : "Update"
+    GiveReviewsWorker.perform_in(1.minutes, @user.id, @review.trainer_id, type, trainers_reviews_path)
   end
 
 end
