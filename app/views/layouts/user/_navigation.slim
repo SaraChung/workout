@@ -12,7 +12,7 @@ header.navigation.fixed
             li = link_to "Past Workouts", users_workout_sessions_path(time: "past")
             li = link_to "Upcoming Workouts", users_workout_sessions_path(time: "upcoming") 
             li = link_to "Workout Requests", users_workout_sessions_path(time: "request") 
-        li.nav-link.more 
+        li.nav-link
           = link_to "Give Reviews", users_reviews_path
 
     .navigation-tools
