@@ -4,11 +4,13 @@
   = image_tag (@trainer.profiles_trainer.nil? ? "/default-image.png" : @trainer.profiles_trainer.image.url(:medium)), id: "profile-picture"
   #profile-address
     i.fa.fa-map-marker.fa-lg 
-    | Toronto, Canada 
-  #profile-rating
-    | 5
-    i.fa.fa-star.fa-lg
-    | based on ... reviews.
+    | Toronto, Canada
+  - unless @trainer.reviews.empty?
+    #profile-rating
+      = @trainer.reviews.pluck(:rating).inject(:+) / @trainer.reviews.count 
+      i.fa.fa-star.fa-lg
+      = "based on #{@trainer.reviews.count} #{@trainer.reviews.count > 1 ? 'reviews' : 'review'}."
+
   #profile-setting
     = link_to "<i class='fa fa-pencil-square-o'></i>".html_safe, edit_trainers_profile_path(@trainer.id)
     ' | 
