@@ -12,7 +12,7 @@ class TrainersController < ApplicationController
 
   def init_variables
     @trainer ||= current_trainer.decorate
-    @count_unread ||= Notification.count_unread_trainer(current_trainer.id)
+    @count_unread ||= Notification.count_unread_trainer(@trainer.id)
   end
 
   def init
