@@ -7,7 +7,7 @@
     | Toronto, Canada
   - unless @trainer.reviews.empty?
     #profile-rating
-      = @trainer.reviews.pluck(:rating).inject(:+) / @trainer.reviews.count 
+      = number_with_precision(@trainer.reviews.pluck(:rating).inject(:+) / @trainer.reviews.count, precision: 2) 
       i.fa.fa-star.fa-lg
       = "based on #{@trainer.reviews.count} #{@trainer.reviews.count > 1 ? 'reviews' : 'review'}."
 
