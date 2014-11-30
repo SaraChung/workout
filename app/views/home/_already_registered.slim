@@ -32,8 +32,10 @@ hr
     = label_tag "rbook_phone", "Phone Number", class: "form-label"
     = text_field_tag "rbook_phone", "", placeholder: "Your phone number here"
   hr
-  div
-      = submit_tag "Book Trainer", class: "blue-button", id: "registered_submit_button", disabled: true
+  .input-control
+    = label_tag "", "", class: "form-label"
+    = button_tag "Find", { class: "blue-button", id: "find_trainer" }
+    = submit_tag "Book Trainer", class: "blue-button", id: "registered_submit_button", disabled: true
 
-div
-  = button_tag "Find", { class: "blue-button", id: "find_trainer" }
+.input-control
+  = label_tag "", "", class: "form-label"

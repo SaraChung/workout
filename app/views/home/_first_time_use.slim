@@ -25,5 +25,7 @@ hr
   .input-control
     = label_tag "book_is_private", "Private?", class: "form-label"
     = select_tag "book_is_private", options_for_select([["Yes", "true"], ["No", "false"]], "false")
-  div
+  hr
+  .input-control
+    = label_tag "", "", class: "form-label"
     = submit_tag "Find", class: "blue-button"
