@@ -3,7 +3,7 @@ hr
 = form_tag(find_trainer_users_books_path, remote: true, method: :get, id: "first_time_use_form")
   .input-control
     = label_tag "book_time", "Date and Time", class: "form-label"
-    = select_datetime(Time.now, discard_year: true, start_hour: 6, end_hour: 22, ampm: true, prefix: "book_time", minute_step: 15)
+    = select_datetime(Time.now + 2.hours, discard_year: true, start_hour: 6, end_hour: 22, ampm: true, prefix: "book_time", minute_step: 15)
   .input-control
     = label_tag "book_range", "How many minutes", class: "form-label"
     = select_tag "book_range", options_for_select([ 30, 45, 60, 90 ], 45)

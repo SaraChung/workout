@@ -3,7 +3,7 @@ hr
 = form_tag(users_registered_books_path, id: "registered_user_form")
   .input-control
     = label_tag "rbook_time", "Date and Time", class: "form-label"
-    = select_datetime(Time.now, discard_year: true, start_hour: 6, end_hour: 22, ampm: true, prefix: "rbook_time", minute_step: 15)
+    = select_datetime(Time.now + 2.hours, discard_year: true, start_hour: 6, end_hour: 22, ampm: true, prefix: "rbook_time", minute_step: 15)
   .input-control
     = label_tag "rbook_range", "How many minutes", class: "form-label"
     = select_tag "rbook_range", options_for_select([ 30, 45, 60, 90 ], 45)
