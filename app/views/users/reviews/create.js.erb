@@ -1,0 +1,4 @@
+<% if @review.persisted? %>
+  $(".flash").html('<div class="flash-success"><span>Reviews has been sent!</span></div>');
+  $("#submit-review").prop('disabled', true);
+<% end %>

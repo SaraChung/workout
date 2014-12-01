@@ -8,7 +8,7 @@
     .card-copy
       .badges
         - x.exercises.pluck(:name).each do |x|
-          = link_to x, "#", class: "badge"
+          span = link_to x, "#", class: "badge"
           |  
     .card-stats
       ul

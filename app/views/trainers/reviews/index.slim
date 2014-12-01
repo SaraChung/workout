@@ -1,0 +1,8 @@
+.title-content
+  .line-behind-text
+    h4.center-header Reviews
+- unless @reviews.nil?
+  .reviews
+    = render partial: "list"
+
+#feed-link = paginate @reviews, :remote => true

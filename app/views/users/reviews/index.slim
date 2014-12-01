@@ -1,0 +1,15 @@
+- unless @trainers.nil?
+  h2 These people are waiting for your reviews!
+  section#trainers-reviewable 
+    - @trainers.each do |x|
+      .trainer-reviewable data-trainer="#{x.id}"
+        = image_tag (x.profiles_trainer.nil? ? "/default-image.png" : x.profiles_trainer.image.url(:medium)), height: 100, width: 100
+        label = x.full_name
+        .badges
+          - x.exercises.pluck(:name).each do |x|
+            = link_to x, "#", class: "badge"
+            |  
+  .modal
+    label[for="modal-1"]
+    input#modal-1.modal-state[type="checkbox"]
+    .modal-window

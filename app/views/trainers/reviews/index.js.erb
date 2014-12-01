@@ -1,0 +1,6 @@
+$('.reviews').html("<%=j render partial: 'list' %>");
+$('#feed-link').html('<%= escape_javascript(paginate(@reviews, :remote => true).to_s) %>');
+
+$(document).ready(function() {
+  load_each_stars();
+});

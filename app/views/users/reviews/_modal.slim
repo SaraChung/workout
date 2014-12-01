@@ -1,0 +1,23 @@
+.modal-inner
+  label.modal-close[for="modal-1"]
+  h1
+    | Give 
+    = review.trainer.full_name
+    |  review!
+  .flash
+  = form_for @review, url: users_reviews_path, method: :create, remote: true do |f|
+    table.table
+      tr
+        td = f.label :rating
+        = f.hidden_field :rating
+        = hidden_field_tag 'trainer_id', params[:trainer_id]
+        td  colspan="2"
+          - 5.times do |x|
+            i.fa.fa-star-o.review-star data-review="#{x+1}"
+      tr
+        td = f.label :comments
+        td colspan="2" = f.text_area :comments, cols: 45, rows:3
+      tr
+        td
+        td = f.submit "Give review!", id: "submit-review"
+        td

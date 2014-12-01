@@ -10,6 +10,7 @@ class Trainer < ActiveRecord::Base
   has_many :exercises, through: :exercises_trainers
   has_many :sessions
   has_many :users, through: :sessions
+  has_many :reviews
 
   has_one :profiles_trainer, dependent: :destroy
     
@@ -27,6 +28,7 @@ class Trainer < ActiveRecord::Base
   scope :who_is, -> (id) { where("id = ?", id).pluck(:first_name, :last_name).flatten }
   scope :where_is, -> (email) { where("email = ?", email).pluck(:address)[0] }
   scope :who_has_email, -> (email) { where("email = ?", email).pluck(:first_name, :last_name).flatten }
+  scope :reviewable, -> (user_id) { where("trainers.id IN ((SELECT trainer_id FROM sessions WHERE user_id = ? AND to_when < ? AND status = 'true'))", user_id, Time.now.strftime('%Y-%_m-%-d %H:%M')) }
 
   def load_trainer_skills
     self.exercises.pluck(:id)

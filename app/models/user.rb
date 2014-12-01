@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :sessions
   has_many :trainers, through: :sessions
+  has_many :reviews
 
   has_one :profiles_user, dependent: :destroy
   

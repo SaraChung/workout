@@ -15,6 +15,13 @@ class NotificationsService
     Session.find(session.id).destroy    
   end
 
+  def push_give_reviews(user, trainer_id, type, url)
+    type = NotificationsType.what_id("Give Reviews")
+    title = type == "Create" ? "Somebody sent you review!" : "Somebody updated your review!"
+    message = type == "Create" ? "You received a review from [#{user.email}]" : "[#{user.email}] updated your review." 
+    Notification.create(notifications_type_id: type, subject_id: user.id, obj_id: trainer_id, title: title, short_message: message, long_message: message, url: url, object_hash: "{ trainer_id: #{trainer_id}, user_id: #{user.id} }")
+  end
+
   def its(name)
     name.last == "s" ? name + "'" : name + "'s"
   end
