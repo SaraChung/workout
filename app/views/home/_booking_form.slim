@@ -1,4 +1,4 @@
-fieldset
+fieldset.booking-user-details
   = form_tag users_books_path, id: "booking_form"
     .input-control
       | #{text_field_tag "booker_first_name", "", placeholder: "First Name"}
@@ -12,13 +12,13 @@ fieldset
       | #{hidden_field_tag "booker_exercise"}
       | #{hidden_field_tag "booker_location"}
       | #{hidden_field_tag "booker_is_private"}
-    .input-control
-      = label_tag :gender, "Gender"
-      .label-checkbox
-        = radio_button("booker", "gender", false, id: "booker_gender")
-        | Female
-      .label-checkbox
-        = radio_button("booker", "gender", true, id: "booker_gender")
-        | Male
+      .input-checkbox-vertical
+        .label-checkbox-vertical
+          = radio_button("booker", "gender", false, id: "booker_gender", checked: "checked")
+          | Female
+        .label-checkbox-vertical
+          = radio_button("booker", "gender", true, id: "booker_gender")
+          | Male
+      
     div
       = submit_tag "Book Trainer", class: "blue-button"

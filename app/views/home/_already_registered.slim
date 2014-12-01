@@ -16,7 +16,7 @@ hr
   .input-control
     = label_tag "rbook_is_trainer", "Trainer/Assistant", class: "form-label"
     .label-checkbox
-      = radio_button("rbook", "is_trainer", true, id: "rtrainer_is_trainer")
+      = radio_button("rbook", "is_trainer", true, id: "rtrainer_is_trainer", checked: "checked")
       | Trainer
     .label-checkbox
       = radio_button("rbook", "is_trainer", false, id: "rtrainer_is_trainer")
