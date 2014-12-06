@@ -2,7 +2,7 @@
 
 How to start workout web app:
 
-** Start redis <tt>redis-server</tt>
-** Start postgresql <tt>postgres -D /usr/local/var/postgres</tt>
-** Start sidekiq <tt>bundle exec sidekiq</tt>
-** Start server <tt>rails s</tt>
+1. Start redis <tt>redis-server</tt>
+2. Start postgresql <tt>postgres -D /usr/local/var/postgres</tt>
+3. Start sidekiq <tt>bundle exec sidekiq</tt>
+4. Start server <tt>rails s</tt>
