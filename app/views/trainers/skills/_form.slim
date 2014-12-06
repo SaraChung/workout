@@ -1,10 +1,12 @@
 = form_for @skill, url: trainers_skills_path do |f|
   | These are skills that will be shown to your client.
 
-  - @skills.each_with_index do |skill, index|
-    br
-    = check_box_tag "skill_ids[]", skill.id, @trainer_skills.include?(skill.id)
-    = skill.name
+  table.table
 
-  br
-  = f.submit "Save"
+    - @skills.each_with_index do |skill, index|
+        tr
+          td = check_box_tag "skill_ids[]", skill.id, @trainer_skills.include?(skill.id)
+          td colspan="25" = skill.name
+    tr
+      td colspan="3" = f.submit "Save"
+      td colspan="23"

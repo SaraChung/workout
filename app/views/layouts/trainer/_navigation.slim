@@ -12,8 +12,8 @@ header.navigation.fixed
             li = link_to "Past Workouts", trainers_workout_sessions_path(time: "past")
             li = link_to "Upcoming Workouts", trainers_workout_sessions_path(time: "upcoming")
             li = link_to "Workout Requests", trainers_workout_sessions_path(time: "request")
-        li.nav-link
-          = link_to "Check Your Reviews!", trainers_reviews_path
+        li.nav-link = link_to "Check Your Reviews!", trainers_reviews_path
+        li.nav-link = link_to "Update Skills", new_trainers_skill_path
 
     .navigation-tools
       ul#navigation-menu
