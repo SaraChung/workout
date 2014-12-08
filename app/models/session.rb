@@ -1,4 +1,7 @@
 class Session < ActiveRecord::Base
+  
+  validate :session_time
+
   belongs_to :user
   belongs_to :trainer
   belongs_to :exercise
@@ -17,5 +20,11 @@ class Session < ActiveRecord::Base
 
   def is_private
     self.is_private? ? "Yes" : "No"
+  end
+
+  def session_time
+    unless self.from_when > Time.now
+      errors.add :base, "Workout session time is not valid."
+    end
   end
 end
