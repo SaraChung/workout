@@ -10,7 +10,7 @@
       td colspan="2" = @trainer.gender
     tr
       td Birthdate
-      td colspan="2" = @trainer.profiles_trainer.birthdate.strftime('%A, %d %B %Y') 
+      td colspan="2" = @trainer.profiles_trainer.birthdate.strftime('%A, %d %B %Y') unless @trainer.profiles_trainer.birthdate.nil?
     tr
       td Email
       td colspan="2" = @trainer.email
