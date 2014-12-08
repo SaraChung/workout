@@ -22,4 +22,7 @@ app/views/refills/
 stylesheets
 public/system
 
+config/database.yml
+
 .rvmrc
+
