@@ -11,6 +11,7 @@ hr
     = label_tag "book_location", "Your Address", class: "form-label"
     = text_field_tag "book_location", "", placeholder: "Street, City"
     = hidden_field_tag "book_trainer"
+    = hidden_field_tag "session_time"
   .input-control
     = label_tag "book_exercise", "Exercise Type", class: "form-label"
     = select_tag "book_exercise", options_from_collection_for_select(Exercise.all, "id", "name")
