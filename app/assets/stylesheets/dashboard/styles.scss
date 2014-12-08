@@ -197,7 +197,12 @@ table{
   float: left;
   cursor: pointer;
 }
-.trainer-reviewable, .left-box img{
+.trainer-reviewable img{
+  margin: auto;
+  display: block;
+  border-radius: 100%;
+}
+.left-box img{
   border-radius: 100%;
   display: block;
   @include image-rendering(optimizeSpeed);
