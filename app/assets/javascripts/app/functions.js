@@ -17,6 +17,15 @@ var get_registered_book = function(trainer_id){
     $("#rbook_trainer").val(trainer_id);
 }
 
+var on_date_change_first_time_use = function(){
+    $("select[id^='book_time']").change(function(){
+        dateFrom = moment({ y: parseInt($("#book_time_year").val()), M: parseInt($("#book_time_month").val()) - 1, d: parseInt($("#book_time_day").val()), h: parseInt($("#book_time_hour").val()), m: $("#book_time_minute").val()}).format("YYYY-MM-DD hh:mm");
+        now = moment().format("YYYY-MM-DD hh:mm");
+        later = moment(dateFrom).isAfter(now);
+        $("#session_time").val(later);
+    });
+}
+
 var clear_book_form = function(){
     $("#first_time_use_form").change(function(){
         $(".trainer-list").html("");
@@ -40,10 +49,24 @@ var clear_book_form = function(){
 }
 
 var registered_user_booking = function(){
+    $("input[name='rbook[is_trainer]']").click(function(){
+        val_input = $(this).val();
+        $("input[name='rbook[is_trainer]'][value!="+val_input+"]").removeAttr("checked");
+        $(this).attr("checked","checked");
+    });
+
     $("#find_trainer").click(function(){
         dateFrom = moment({ y: parseInt($("#rbook_time_year").val()), M: parseInt($("#rbook_time_month").val()) - 1, d: parseInt($("#rbook_time_day").val()), h: parseInt($("#rbook_time_hour").val()), m: $("#rbook_time_minute").val()}).format("YYYY-MM-DD hh:mm");
         dateTo = moment(dateFrom).add($("#rbook_range").val(), 'm').format("YYYY-MM-DD hh:mm");
-        $.ajax({ url: "/users/registered_books/find_trainer?exercise="+$("#rbook_exercise").val()+"&from="+dateFrom+"&to="+dateTo+"&trainer="+$("#rtrainer_is_trainer").val()+"&user_email="+$("#rbook_email").val() });
+        now = moment().format("YYYY-MM-DD hh:mm");
+        later = moment(dateFrom).isAfter(now);
+        if(later == true){
+            $.ajax({ url: "/users/registered_books/find_trainer?exercise="+$("#rbook_exercise").val()+"&from="+dateFrom+"&to="+dateTo+"&trainer="+$("input[name='rbook[is_trainer]'][checked='checked']").val()+"&user_email="+$("#rbook_email").val() });
+        }else{
+            $(".modal-window h1").text("Ooops!");
+            $(".modal-window p.intro").text("Your date is incorrect.");
+            $(".modal-state").prop('checked', true);
+        }
     });
 }
 

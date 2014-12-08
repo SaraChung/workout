@@ -13,6 +13,7 @@ class Users::BooksController < ApplicationController
   end
 
   def find_trainer
+    @session_time = params[:session_time]
     @trainers = Trainer.available(params[:book_exercise], to_date(params[:book_time]), to_date(params[:book_time]) + params[:book_range].to_i.minutes, params[:book][:is_trainer], params[:book_location])
   end
   

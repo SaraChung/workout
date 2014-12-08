@@ -1,5 +1,7 @@
-<% if @trainers.count(:all).zero? %>
-  $(".trainer-list").html("Hello");
+<% if @trainers.count(:all).zero? || @session_time == "false" %>
+  $(".modal-window h1").text("Ooops!");
+  $(".modal-window p.intro").text("Please check your input and try again. Workout session time might be incorrect or there is no trainer/assistant that available.");
+  $(".modal-state").prop('checked', true);
 <% else %>
   $(".trainer-list").html("<%=j render partial: 'list' %>");
 <% end %>
